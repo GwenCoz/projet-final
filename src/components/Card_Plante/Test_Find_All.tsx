@@ -21,9 +21,7 @@ const Find_All = () => {
     return (
         <>
            <div id='Card_Container'>
-               
-                <h1>NB plantes : {plantes.length}</h1>
-                { plantes && plantes.length > 0 && plantes.map(plante => (
+                               { plantes && plantes.length > 0 && plantes.map(plante => (
                     Card_Plante(plante)
                     
                 ))} 

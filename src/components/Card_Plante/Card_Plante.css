@@ -1,7 +1,9 @@
 #Card_Container{
     width: 100%;
     height: auto;
-    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #Card_Fond{

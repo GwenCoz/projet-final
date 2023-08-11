@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Find_All from './components/Card_Plante/Test_Find_All';
 
 function App() {
   return (
@@ -15,9 +16,9 @@ function App() {
 
           <Routes>
 
-            {/* <Route path="/" element={<Layout/>} />
-            <Route path="Test1" element={<Test1/>} />
-            <Route path="*" element={<NoPage/>} /> */}
+            {/* <Route path="/" element={<Layout/>}/> */}
+            <Route path="Test1" element={<Find_All/>} />
+            {/* <Route path="*" element={<NoPage/>} /> */}
 
           </Routes>
 

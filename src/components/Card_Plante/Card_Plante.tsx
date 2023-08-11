@@ -1,6 +1,6 @@
 import { Plante } from "./Plante";
 import React, { useEffect, useState } from 'react';
-import image from './../Images/Plantes/Alocasia_Azlanii.jpg';
+import "./Card_Plante.css"
 
 function Card_Plante(p:Plante)
 {

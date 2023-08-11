@@ -1,6 +1,10 @@
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from 'react';
 import { Plante } from "./Plante";
 import Card_Plante from "./Card_Plante";
+import { ListePlante } from "../Test_plante";
+import "./Card_Plante.css"
+
+
 
 const Find_All = () => {
 
@@ -16,7 +20,7 @@ const Find_All = () => {
     // }, [])
     return (
         <>
-           <div >
+           <div id='Card_Container'>
                
                 <h1>NB plantes : {plantes.length}</h1>
                 { plantes && plantes.length > 0 && plantes.map(plante => (

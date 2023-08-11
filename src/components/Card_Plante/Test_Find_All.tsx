@@ -11,10 +11,11 @@ const Find_All = () => {
         <>
            <div >
                
-                <p>{plantes.length}</p>
+                <h1>NB plantes : {plantes.length}</h1>
                 { plantes.length > 0 && plantes.map(plante => (
                     Card_Plante(plante)
-                ))}
+                    
+                ))} 
 
 
             </div>

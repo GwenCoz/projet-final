@@ -1,3 +1,19 @@
+
 #Card_Fond{
-    background-color: wheat;
+    height:400px;
+    width: 30%;
+    background-color: antiquewhite;
+    padding: 5px;
+    margin: 5px;
+    border-radius:10px;
+}
+#Card_Image_Div{
+    margin: 5px;
+
+}
+#Card_Image{
+    border-radius:10px;
+    object-fit: cover;
+    height:350px ;
+    width: 100%;
 }

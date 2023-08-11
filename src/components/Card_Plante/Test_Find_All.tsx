@@ -10,13 +10,11 @@ const Find_All = () => {
     return (
         <>
            <div >
-                <ul className="list-group list-group-flush w-auto m-auto">
-                    <p>{plantes.length}</p>
-                    {plantes.length > 0 && plantes.map(plante => (
-                        Card_Plante(plante)
-                    ))}
-                      
-                </ul>
+               
+                <p>{plantes.length}</p>
+                { plantes.length > 0 && plantes.map(plante => (
+                    Card_Plante(plante)
+                ))}
 
 
             </div>

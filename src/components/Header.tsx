@@ -44,9 +44,9 @@ Mega soldes, une plante achetée, une deuxième vous est imposée!
         Plantes d'intérieur
        </Dropdown.Toggle>
         <Dropdown.Menu>
-        <Dropdown.Item href="#/action-1">Par Taille</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Par Emplacement</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Par Beauté</Dropdown.Item>
+        <Dropdown.Item href="/nos_plantes">Par Taille</Dropdown.Item>
+        <Dropdown.Item href="/nos_plantes">Par Emplacement</Dropdown.Item>
+        <Dropdown.Item href="/nos_plantes">Par Beauté</Dropdown.Item>
       </Dropdown.Menu>
       </Dropdown> 
 

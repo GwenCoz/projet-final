@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Plante } from "./Plante";
 import Card_Plante from "./Card_Plante";
-import { ListePlante } from "../Test_plante";
+import { ListePlante } from "../Api_objects";
 import "./Card_Plante.css"
 
 
 
-const Find_All = () => {
+const Affichage_produits = () => {
 
     const [plantes, setPlantes] = useState<(Plante[])>([]);
     useEffect(() => {
@@ -14,10 +14,7 @@ const Find_All = () => {
 
 
     }, [])
-   
-    // useEffect(() => {
-    //     fetch('http://localhost:52550/api/article/Get').then((res) => res.json()).then(data => setPlantes(data));
-    // }, [])
+
     return (
         <>
            <div id='Card_Container'>
@@ -34,4 +31,4 @@ const Find_All = () => {
     )
 }
 
-export default Find_All;
+export default Affichage_produits;

@@ -22,6 +22,9 @@ function Cart() {
       updateItemQuantity,
       removeItem,
       emptyCart,
+      cartTotal,
+      totalItems,
+
     } = useCart();
   
     if (isEmpty) return <p>Votre panier est vide</p>;
@@ -51,6 +54,8 @@ function Cart() {
         </ul>
         <button className="btn btn-danger"
                onClick={() => emptyCart()}>Vider le panier</button>
+
+        <h3>Pour un total de {totalItems} items : {cartTotal} €</h3>
       </>
     );
   }

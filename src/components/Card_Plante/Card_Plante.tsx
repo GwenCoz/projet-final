@@ -15,7 +15,7 @@ function Card_Plante(p: Plante) {
                 <div className="card-body">
                     <p id="Card_Name">{p.Nom}</p>
                     <a href={`page_article/${p.id}`}>{p.Nom}</a>
-                    <Link to={`/page_article2/${p.Nom}`} state={p}>{p.Nom}</Link>
+                    {/* <Link to={`/page_article2/${p.Nom}`} state={p}>{p.Nom}</Link> */}
 
                 </div>
 

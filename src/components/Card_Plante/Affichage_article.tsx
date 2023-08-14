@@ -2,6 +2,7 @@ import { useState, createContext, useContext, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { Plante } from "./Plante";
 import { useLocation, useParams } from "react-router-dom";
+import Maplante from "../Api_objects";
 
 
 function Affichage_article() {
@@ -10,21 +11,21 @@ function Affichage_article() {
   console.log(location);
 
 
-  // const { id } = useParams();
+  const { id } = useParams();
 
-  // const [plante, setPlante] = useState<(Plante)>(undefined);
-  // useEffect(() => {
-  //   fetch(`http://localhost:52550/api/article/get/${id}`).then((data) => { data.json().then(setPlante) });
+  const [plante, setPlante] = useState<(Plante)>(undefined);
+  useEffect(() => {
+  Maplante(id).then((data) => { setPlante(data) });
 
 
-  // }, []);
+  }, []);
 
   return (
-    // plante && <>
-    //   Coucou
-    //   <h1>{plante.Nom}</h1>
-    // </>
-    <>test</>
+    plante && <>
+      Coucou
+      <h1>{plante.Nom}</h1>
+    </>
+
   );
 }
 

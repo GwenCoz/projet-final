@@ -17,9 +17,9 @@ return (plante)
 }
 
 
-async function Maplante() {
+async function Maplante(id) {
 
-const response = await fetch('http://localhost:52550/api/article/get/1').then((res) => res.json());
+const response = await fetch(`http://localhost:52550/api/article/get/${id}`).then((res) => res.json());
 // Renvoyez les données récupérées
 return response;
 }

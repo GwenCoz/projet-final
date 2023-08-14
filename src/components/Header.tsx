@@ -28,7 +28,7 @@ Mega soldes, une plante achetée, une deuxième vous est imposée!
             <a className="nav-link" href="#">Connexion</a>
         </li>
         <li className="nav-item">
-            <a className="nav-link" href="#">Panier</a>
+            <a className="nav-link" href={"/panier"}>Panier</a>
         </li>
 
         </ul>

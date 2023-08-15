@@ -7,17 +7,30 @@
 }
 
 #Card_Fond{
-    height:10%;
-    width: 20%;
+    
+  transition-duration: 50ms;
+  transition-delay: 50ms;
+
+    height: 400px;
+    width: 24%;
     background-color: antiquewhite;
     padding: 10px;
     margin: 5px;
     border-radius:10px;
     float: left;
+    
 }
-#Card_Image_Div{
-    margin: 5px;
+#Card_Name{
+    color: darkgreen;
+    position: relative;
+    top: 5px;
+    font-weight: 600;
+    font-size: 18px;
+}
 
+#Card_Image_Div{
+    margin: 0px;
+    top: 0px;
 }
 #Card_Image{
     border-radius:10px;
@@ -26,18 +39,90 @@
     width: 100%;
 }
 
+#Card_Btn{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    position: relative;
+    top: -383px;
+    margin : 0 10px;
+
+}
+#Card_Prix{
+    visibility: hidden;
+    padding-top: 5px;
+    position: relative;
+    height: auto;
+    top: 0px;
+    left: 3px;
+    color: darkgreen;
+    font-weight: 600;
+    font-size: medium;
+}
+#Card_Panier{
+    position: relative;
+    justify-content: left;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    height: 35px;
+    border: 0px;
+    padding: 0 6px 0px 6px;
+}
+#Card_Panier_Img{
+    left: -4px;
+    top: -6px;
+    height: 20px;
+}
+
+#Card_Fond:hover{
+    padding: 0;
+    border: 1px solid darkgreen;
+    #Card_Name{
+        font-size: 20px;
+        top: -50px;
+        color: aliceblue;
+        background-color: rgba(0, 100, 0, 0.75);
+        border-radius: 10px;
+        margin: 10px;
+    }
+    #Card_Image{
+        border-radius:10px;
+        object-fit: cover;
+        height:398px;
+        width: 100%;
+    }#Card_Prix{
+        visibility:visible;
+        color : antiquewhite;
+        margin-right: 6px;
+    }#Card_Btn{
+        left: 0px;
+        top: -440px;
+        background-color: rgba(0, 100, 0, 0.75);
+        border-radius: 10px;
+        width: fit-content;
+        height: 35px;
+        
+        justify-content: space-around;
+    }#Card_Panier{
+        background: none;
+    }
+    #Card_Panier_Img{
+        filter: invert();
+    }
+}
+
 @media only screen and (max-width: 1200px) {
     #Card_Fond{
-        width: 30%;
+        width: 32%;
     }
   }
 @media only screen and (max-width: 800px) {
     #Card_Fond{
-        width: 50%;
+        width: 45%;
     }
   }
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 600px) {
     #Card_Fond{
         width: 95%;
     }

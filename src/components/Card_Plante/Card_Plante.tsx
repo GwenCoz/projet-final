@@ -21,22 +21,25 @@ function Card_Plante(props) {
 
     return (
 
-            <div id="Card_Fond">
+            <div id="Card_Fond" >
+                <a href={`page_article/${p.id}`}>
                 <div id="Card_Image_Div">
-                    <img id="Card_Image" src={p.imgpath} />
+                    <img id="Card_Image" src={p.imgpath}/>
                 </div>
-                <div className="card-body">
-                    <p id="Card_Name">{p.Nom}</p>
-                    <p id="Card_Name">{ptocarte.price}</p>
-
-
-                </div>
-                <a className="btn btn-success" href={`page_article/${p.id}`}>Description</a><br/>
-                {!inCart(ptocarte.id) &&
-                    <button className="btn btn-success" onClick={() => addItem(ptocarte)}>Panier</button>
+                </a>
+                <p id="Card_Name">{p.Nom}</p>
+                                
+                <div id="Card_Btn">
+                    {!inCart(ptocarte.id) &&
+                    <button id="Card_Panier" onClick={() => addItem(ptocarte)}><img id="Card_Panier_Img" src={process.env.PUBLIC_URL +"../Images/logo_panier.png"} /></button>
+                    || <button disabled id="Card_Panier" onClick={() => addItem(ptocarte)}>Déjà ajouté</button>}
                     
-                 || <button disabled className="btn btn-success" onClick={() => addItem(ptocarte)}>Déjà ajouté</button>}
+                    <p id="Card_Prix">{ptocarte.price} €</p>
+                </div>
+                
+                
             </div>
+            
 
 
     )

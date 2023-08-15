@@ -22,13 +22,7 @@ function Card_Plante(props) {
     return (
 
             <div id="Card_Fond" >
-                <a href={`page_article/${p.id}`}>
-                <div id="Card_Image_Div">
-                    <img id="Card_Image" src={p.imgpath}/>
-                </div>
-                </a>
-                <p id="Card_Name">{p.Nom}</p>
-                                
+
                 <div id="Card_Btn">
                     {!inCart(ptocarte.id) &&
                     <button id="Card_Panier" onClick={() => addItem(ptocarte)}><img id="Card_Panier_Img" src={process.env.PUBLIC_URL +"../Images/logo_panier.png"} /></button>
@@ -36,6 +30,17 @@ function Card_Plante(props) {
                     
                     <p id="Card_Prix">{ptocarte.price} €</p>
                 </div>
+
+
+                <a href={`page_article/${p.id}`}>
+                <div id="Card_Image_Div">
+                    <img id="Card_Image" src={p.imgpath}/>
+                </div>
+                
+                <p id="Card_Name">{p.Nom}</p>
+                </a>
+                                
+                
                 
                 
             </div>

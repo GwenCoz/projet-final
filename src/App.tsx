@@ -8,6 +8,7 @@ import Affichage_article from './components/Card_Plante/Affichage_article';
 import Connexion from './components/Utilisateur/Connexion';
 import { CartProvider } from 'react-use-cart';
 import Panier from './components/panier';
+import Profil from './components/Utilisateur/profil';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route path="page_article/:id" element={<Affichage_article/>} />
             <Route path="panier" element={<Panier/>} />
             <Route path="connexion" element={<Connexion/>} />
+            <Route path="profil" element={<Profil/>} />
 
 
 

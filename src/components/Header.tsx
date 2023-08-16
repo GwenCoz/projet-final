@@ -1,12 +1,25 @@
 import Image from 'react-bootstrap/Image';
 import Nav from 'react-bootstrap/Nav';
 import Dropdown from 'react-bootstrap/Dropdown';
+import { useEffect,useState } from 'react';
+import { Utilisateur } from './Utilisateur/utilisateur';
 
-
-
-
+function Deconnexion()
+{
+  sessionStorage.clear();
+  window.location.reload();
+}
 
 function Header(){
+
+  const [utilisateur,setutilisateur] = useState<Utilisateur>(null)
+
+  if (utilisateur==null && sessionStorage.getItem("user"))
+  {
+    setutilisateur (JSON.parse (sessionStorage.getItem ("user")));
+  }
+
+
 
         return (
            <div>
@@ -19,17 +32,38 @@ Mega soldes, une plante achetée, une deuxième vous est imposée!
 
 <div>
 <div className="container-fluid">
+{utilisateur && <div className="navbar justify-content-start">
+  Bonjour {utilisateur.Prenom} {utilisateur.Nom}
+  </div>}
+  
     <nav className="navbar navbar-expand-sm justify-content-end">
     <Image src=""/>
 
         <ul className="navbar-nav ">
 
-        <li className="nav-item ">
-            <a className="nav-link" href="#">Connexion</a>
-        </li>
         <li className="nav-item">
-            <a className="nav-link" href={"/panier"}>Panier</a>
+            <a className="nav-link" href="/panier">Panier</a>
         </li>
+
+        
+            {utilisateur &&
+            <>
+            <li className="nav-item ">
+            <a className="nav-link" href="/profil">Mon profil</a>
+            </li>
+
+            <li className="nav-item">
+            <a type="button" className="nav-link" onClick={Deconnexion}>Deconnexion</a>
+            </li>
+            </>
+
+            ||
+      
+
+        <li>
+          <a className="nav-link" href="/connexion">Connexion</a>
+        </li>
+        }
 
         </ul>
 

@@ -4,8 +4,7 @@ import { Plante } from "./Plante";
 import { useParams } from "react-router-dom";
 
 import { useCart } from "react-use-cart";
-import { Maplante } from "../Api_objects";
-import Bouton_Panier from "./Bouton_Panier";
+import { GetPlante } from "../Api_objects";
 
 
 function Affichage_article() {
@@ -24,7 +23,7 @@ function Affichage_article() {
 
   useEffect(() => {
     
-    Maplante(id).then((p) => { setPlante(p);setptocarte ({...p,price:Number(p.Prix),id:String(p.id)}) });
+    GetPlante(id).then((p) => { setPlante(p);setptocarte ({...p,price:Number(p.Prix),id:String(p.id)}) });
     if (ptocarte)
       {
         Presencepanier = inCart(ptocarte.id);

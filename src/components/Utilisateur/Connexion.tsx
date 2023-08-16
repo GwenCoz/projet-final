@@ -1,19 +1,70 @@
 import { useEffect, useState } from "react";
+import { Utilisateur } from "./utilisateur";
+import { GetUtilisateur } from "../Api_objects";
+
 
 const Connexion = () =>
 
 {
+    
 
-    const [utilisateur, setutilisateur] = useState({});
+    const [connectinfo, setconnectinfo] = useState({email:null,mdp:null});
+
+    const [utilisateur,setutilisateur] = useState<Utilisateur>(null);
+    const [erreurconnexion,seterreurconnexion] = useState (false);
+
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert(`The name you entered was: ${utilisateur}`)
+
+        GetUtilisateur (connectinfo.email).then (setutilisateur);
+        
+        
+
+        if (utilisateur==null)
+        {
+            seterreurconnexion (true);
+        }
+        else
+        {
+            seterreurconnexion (false);
+            
+            
+        }
+
+
+
+
 
       }
-      console.log (utilisateur)
+
+      useEffect(() => {
 
 
+        if (sessionStorage.getItem ("user")==null && utilisateur)
+        {
+            sessionStorage.setItem ("user",JSON.stringify(utilisateur))
+        }
+
+        if (sessionStorage.getItem ("user") && utilisateur==null)
+        {
+            setutilisateur (JSON.parse(sessionStorage.getItem ("user")))
+        }
+
+        console.log (sessionStorage.getItem("user"))
+
+
+
+
+    
+    
+      },);
+    
+
+
+
+    if (utilisateur==null)
     return (
 
     <> 
@@ -22,19 +73,28 @@ const Connexion = () =>
     <form onSubmit={handleSubmit}>
       <label>Email:
         <input type="email"
-        onChange={(e) => setutilisateur({...utilisateur,email:e.target.value})} />
+        onChange={(e) => setconnectinfo({...connectinfo,email:e.target.value})} />
         
       </label><br/>
 
       <label>Mot de passe:
         <input type="password"
-         onChange={(e) => setutilisateur({...utilisateur,mdp:e.target.value})} />
+         onChange={(e) => setconnectinfo({...connectinfo,mdp:e.target.value})} />
       </label>
 
-      <input type="submit" />
+      <input type="submit"
+       />
     </form>
 
+    {erreurconnexion && <>Erreur dans l'email ou le mot de passe, veuillez vérifier vos informations.</>}
+
     </>   
+    );
+
+
+    return (
+
+        <>Bonjour {utilisateur.Nom} {utilisateur.Prenom}</>
     );
 }
 

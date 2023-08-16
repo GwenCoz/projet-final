@@ -10,35 +10,27 @@ function Affichage_article() {
 
 
   const { id } = useParams();
-  var ptocarte;
   const { addItem} = useCart();
   const [plante, setPlante] = useState<(Plante)>(undefined);
-  
+  const [ptocarte,setptocarte] = useState (undefined);
   
 
 
   useEffect(() => {
-    Maplante(id).then((p) => { setPlante(p) });
-
-    if (plante)
-    {
-      ptocarte = {...plante,...{price:Number(plante.Prix),id:String(plante.id)}};
-      
-    }
-
-
+    Maplante(id).then((p) => { setPlante(p);setptocarte ({...p,price:Number(p.Prix),id:String(plante.id)}) });
+    console.log ()
 
 
   }, []);
 
   return (
-    plante &&<>
+    plante &&ptocarte &&<>
       Coucou, cette page est vraiment magnifique ! 
       <h1>{plante.Nom}</h1>
       {plante.Description}
 
 
-      <button className="btn btn-success" onClick={() => addItem(ptocarte)}>Panier</button>
+      {ptocarte && <button className="btn btn-success" onClick={() => addItem(ptocarte)}>Panier</button>}
 
     </>
 

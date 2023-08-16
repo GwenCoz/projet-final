@@ -3,17 +3,21 @@ import { useState } from "react";
 import "./Card_Plante.css"
 
 import {useCart } from "react-use-cart";
+import Bouton_Panier from "./Bouton_Panier";
 
 
 function Card_Plante(props) {
     const p = props.plant;
+    let Presencepanier = false;
+
 
     
 
-    //let ptocarte = {...p, price:Number(p.Prix), id:String(p.id)};
+
     const [ptocarte] = useState({...p, price:Number(p.Prix), id:String(p.id)});
 
-    const { addItem,inCart} = useCart();
+    const {inCart} = useCart();
+    Presencepanier = inCart(ptocarte.id);
 
 
     
@@ -24,9 +28,9 @@ function Card_Plante(props) {
             <div id="Card_Fond" >
 
                 <div id="Card_Btn">
-                    {!inCart(ptocarte.id) &&
-                    <button id="Card_Panier" onClick={() => addItem(ptocarte)}><img id="Card_Panier_Img" src={process.env.PUBLIC_URL +"../Images/logo_panier.png"} /></button>
-                    || <button disabled id="Card_Panier" onClick={() => addItem(ptocarte)}>Déjà ajouté</button>}
+
+                    <Bouton_Panier Presencepanier={Presencepanier} ptocarte={ptocarte}/>
+
                     
                     <p id="Card_Prix">{ptocarte.price} €</p>
                 </div>

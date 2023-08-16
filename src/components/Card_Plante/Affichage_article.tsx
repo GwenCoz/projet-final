@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 
 import { Plante } from "./Plante";
 import { useParams } from "react-router-dom";
-import Maplante from "../Api_objects";
+
 import { useCart } from "react-use-cart";
+import { Maplante } from "../Api_objects";
 
 
 function Affichage_article() {

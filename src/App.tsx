@@ -4,8 +4,10 @@ import Footer from './components/Footer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Affichage_produits from './components/Card_Plante/Affichage_produits';
 import Affichage_article from './components/Card_Plante/Affichage_article';
-import Panier from './components/Panier';
+
 import Connexion from './components/Utilisateur/Connexion';
+import { CartProvider } from 'react-use-cart';
+import Panier from './components/panier';
 
 
 function App() {

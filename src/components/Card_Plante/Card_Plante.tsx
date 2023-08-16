@@ -1,5 +1,5 @@
-import { useState, createContext, useContext, useEffect } from "react";
-import { Plante } from "./Plante";
+import { useState } from "react";
+
 import "./Card_Plante.css"
 
 import {useCart } from "react-use-cart";

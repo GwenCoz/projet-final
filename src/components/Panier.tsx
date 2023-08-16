@@ -1,6 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { CartProvider, useCart } from "react-use-cart";
+import { useCart } from "react-use-cart";
 
 function Panier(){
 

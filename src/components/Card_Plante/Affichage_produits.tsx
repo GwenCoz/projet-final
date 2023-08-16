@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Plante } from "./Plante";
 import Card_Plante from "./Card_Plante";
 import { ListePlante } from "../Api_objects";
 import "./Card_Plante.css"
-import { Card } from 'react-bootstrap';
+
 
 
 

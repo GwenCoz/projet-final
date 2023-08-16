@@ -1,7 +1,7 @@
-import { useState, createContext, useContext, useEffect } from "react";
-import ReactDOM from "react-dom/client";
+import { useState, useEffect } from "react";
+
 import { Plante } from "./Plante";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Maplante from "../Api_objects";
 import { useCart } from "react-use-cart";
 

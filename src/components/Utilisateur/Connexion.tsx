@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Utilisateur } from "./utilisateur";
 import { GetUtilisateur } from "../Api_objects";
-import { redirect } from "react-router-dom";
 
 
 const Connexion = () =>

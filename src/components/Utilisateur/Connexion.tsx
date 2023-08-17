@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Utilisateur } from "./utilisateur";
 import { GetUtilisateur } from "../Api_objects";
+import { redirect } from "react-router-dom";
 
 
 const Connexion = () =>
@@ -42,15 +43,17 @@ const Connexion = () =>
       useEffect(() => {
 
 
-        if (sessionStorage.getItem ("user")==null && utilisateur)
+        if (sessionStorage.getItem ("user")==undefined && utilisateur)
         {
             sessionStorage.setItem ("user",JSON.stringify(utilisateur))
         }
 
-        if (sessionStorage.getItem ("user") && utilisateur==null)
+        if (sessionStorage.getItem ("user")!=undefined)
         {
-            setutilisateur (JSON.parse(sessionStorage.getItem ("user")))
+          window.location.replace ("/");
         }
+
+
 
         console.log (sessionStorage.getItem("user"))
 

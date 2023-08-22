@@ -20,6 +20,7 @@ function Card_Plante(props) {
         updateItemQuantity,
         getItem} = useCart();
     Presencepanier = inCart(ptocarte.id);
+    
 
 
     

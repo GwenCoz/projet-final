@@ -3,8 +3,9 @@ import { useState, useEffect } from "react";
 import { Plante } from "./Plante";
 import { useParams } from "react-router-dom";
 
-import { useCart } from "react-use-cart";
+import { Item, useCart } from "react-use-cart";
 import { GetPlante } from "../Api_objects";
+
 
 
 function Affichage_article() {
@@ -14,24 +15,28 @@ function Affichage_article() {
 
   const [plante, setPlante] = useState<(Plante)>(undefined);
   const [ptocarte,setptocarte] = useState (undefined);
+  const [item,setitem] = useState<Item> ()
   const {inCart,
     addItem,
+    getItem,
     updateItemQuantity,
-    getItem} = useCart();
-  let Presencepanier =false;
-  
-
-  useEffect(() => {
     
-    GetPlante(id).then((p) => { setPlante(p);setptocarte ({...p,price:Number(p.Prix),id:String(p.id)}) });
-    if (ptocarte)
-      {
-        Presencepanier = inCart(ptocarte.id);
-      }
-      console.log (Presencepanier);
+    } = useCart();
 
 
-  }, []);
+
+  useEffect (() =>
+  {
+    GetPlante(id).then((p) => { setPlante(p);setptocarte ({...p,price:Number(p.Prix),id:String(p.id)});setitem (getItem(String(p.id)))}).then (()=> console.log (item));
+
+
+  }
+
+
+
+  ,[addItem])
+
+  
 
   return (
 
@@ -43,22 +48,20 @@ function Affichage_article() {
       <h1>{plante.Nom}</h1>
       {plante.Description}
 
-    {
-    Presencepanier &&
-    
-    <button id="Card_Panier" onClick={() => addItem(ptocarte)}><img id="Card_Panier_Img"/>Panier</button>
-    || 
-    <>
-    <button id="Card_Panier" onClick={() => updateItemQuantity(ptocarte.id,getItem(ptocarte.id).quantity+1)}>+</button>
-    
-    <button id="Card_Panier" onClick={() => updateItemQuantity(ptocarte.id,getItem(ptocarte.id).quantity-1)}>-</button>
 
+    {!item &&
+    <button id="Card_Panier" onClick={() => addItem(ptocarte)}><img id="Card_Panier_Img" src={"/Images/logo_panier.png"} /></button>
+    
+}
+  {item &&
+    <>
+    modifier la quantité
+    <button id="Card_Panier" onClick={() => updateItemQuantity(item.id,item.quantity+1)}>Ajouter</button>
+    <button id="Card_Panier" onClick={() => updateItemQuantity(item.id,item.quantity-1)}>Retirer</button>
+
+    {item.quantity}
     </>
     }
-    
-    
-    {getItem(ptocarte.id).quantity}
-
 
     </>
 

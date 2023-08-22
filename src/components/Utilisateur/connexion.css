@@ -1,0 +1,15 @@
+@keyframes Tremblement {
+    from {
+      transform: translateX(0px);
+    }
+    to {
+      transform: translateX(10px);
+    }
+  }
+
+.Formulaire-animation {
+pointer-events: auto;
+animation-play-state: paused;
+animation: Tremblement infinite 0.1s linear;
+}
+

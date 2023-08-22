@@ -15,9 +15,10 @@ const response = fetch(`http://localhost:52550/api/article/get/${id}`).then((res
 return response;
 }
 
-export function GetUtilisateur(email) {
+export function GetUtilisateur(email,mdp) {
 
-    const response = fetch(`http://localhost:52550/api/client/Getbymail?email=${email}`).then((res) => res.json());
+    const response = fetch(`http://localhost:52550/api/client/Getbymail?email=${email}&mdp=${mdp}`).then((res) => res.json());
+
     
     return response;
     }

@@ -1,48 +1,59 @@
-import { useEffect, useState } from "react";
+import { Component, useEffect, useRef, useState } from "react";
 import { Utilisateur } from "./utilisateur";
 import { GetUtilisateur } from "../Api_objects";
-
+import "./connexion.css"
 
 const Connexion = () =>
 
 {
-    
+    function verifutilisateur()
+    {
+      if (utilisateur && utilisateur.id==0)
+      {
 
-    const [connectinfo, setconnectinfo] = useState({email:null,mdp:null});
+      seterreurconnexion (true);
+      setcouleurtexte("red");
+      settremblement(true);
+      setTimeout(() => settremblement(false), 2000);
+    }
+    }
+
+    const [connectinfo, setconnectinfo] = useState({email:"",mdp:""});
 
     const [utilisateur,setutilisateur] = useState<Utilisateur>(null);
     const [erreurconnexion,seterreurconnexion] = useState (false);
+    const [couleurtexte,setcouleurtexte] = useState ("black");
+    const [tremblement,settremblement] = useState (false);
 
+    async function Recuperationutilisateur() {
 
+      const myPromise = GetUtilisateur (connectinfo.email,connectinfo.mdp)
+
+      await myPromise.then(function(response) {
+        setutilisateur(response);
+      });
+
+        if (utilisateur==null || utilisateur.id==0)
+        {
+  
+        seterreurconnexion (true);
+        setcouleurtexte("red");
+        settremblement(true);
+        setTimeout(() => settremblement(false), 500);
+        }
+      }
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        GetUtilisateur (connectinfo.email).then (setutilisateur);
-        
-        
-
-        if (utilisateur==null)
-        {
-            seterreurconnexion (true);
-        }
-        else
-        {
-            seterreurconnexion (false);
-            
-            
-        }
-
-
-
-
+        Recuperationutilisateur();
 
       }
 
       useEffect(() => {
 
 
-        if (sessionStorage.getItem ("user")==undefined && utilisateur)
+        if (utilisateur && utilisateur.id!=0)
         {
             sessionStorage.setItem ("user",JSON.stringify(utilisateur))
         }
@@ -51,44 +62,41 @@ const Connexion = () =>
         {
           window.location.replace ("/");
         }
-
-
-
-        console.log (sessionStorage.getItem("user"))
-
-
-
-
     
     
       },);
-    
+  
 
+    if (utilisateur==null || utilisateur.id==0)
 
-
-    if (utilisateur==null)
     return (
 
     <> 
     Déjà Client?
 
-    <form onSubmit={handleSubmit}>
-      <label>Email:
+    <form className="Formulaire-animation" style={{ animationPlayState:tremblement?"running":"paused"}} onSubmit={handleSubmit}>
+      <label style={{'color': couleurtexte}}>Email:
         <input type="email"
-        onChange={(e) => setconnectinfo({...connectinfo,email:e.target.value})} />
+        onChange={(e) => setconnectinfo({...connectinfo,email:e.target.value})}
+        value={connectinfo.email}
+        />
+        
+        
         
       </label><br/>
 
-      <label>Mot de passe:
+      <label style={{'color': couleurtexte}}>Mot de passe:
         <input type="password"
-         onChange={(e) => setconnectinfo({...connectinfo,mdp:e.target.value})} />
+         onChange={(e) => setconnectinfo({...connectinfo,mdp:e.target.value})}
+         value={connectinfo.mdp}
+          />
       </label>
 
       <input type="submit"
        />
     </form>
 
-    {erreurconnexion && <>Erreur dans l'email ou le mot de passe, veuillez vérifier vos informations.</>}
+    {erreurconnexion && <h5>Erreur dans l'email ou le mot de passe, veuillez vérifier vos informations.</h5>}
 
     </>   
     );

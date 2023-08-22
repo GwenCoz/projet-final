@@ -54,6 +54,10 @@ function Cart() {
                onClick={() => emptyCart()}>Vider le panier</button>
 
         <h3>Pour un total de {totalItems} items : {cartTotal} €</h3>
+
+        <a href="/commande"><h3>Passer ma commande</h3></a>
+
+
       </>
     );
   }

@@ -24,9 +24,9 @@ const Collapsible: React.FC<IProps> = ({ open, children, title }) => {
             <h6 className="font-weight-bold">{title}</h6>
             <button type="button" className="btn" onClick={handleFilterOpening}>
               {!isOpen ? (
-                "Ouvrir"
+                "Modifier"
               ) : (
-                "Fermer"
+                "Valider"
               )}
             </button>
           </div>

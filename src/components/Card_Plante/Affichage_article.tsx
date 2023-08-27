@@ -5,8 +5,7 @@ import { useParams } from "react-router-dom";
 
 import { useCart } from "react-use-cart";
 import { GetPlante } from "../Api_objects";
-
-
+import "./Affichage_article.css"
 function Affichage_article() {
 
 
@@ -37,30 +36,39 @@ function Affichage_article() {
 
     plante && ptocarte &&
     
-    <>
-
-      Coucou, cette page est vraiment magnifique ! 
-      <h1>{plante.Nom}</h1>
-      {plante.Description}
-
-    {
-    Presencepanier &&
-    
-    <button id="Card_Panier" onClick={() => addItem(ptocarte)}><img id="Card_Panier_Img"/>Panier</button>
-    || 
-    <>
-    <button id="Card_Panier" onClick={() => updateItemQuantity(ptocarte.id,getItem(ptocarte.id).quantity+1)}>+</button>
-    
-    <button id="Card_Panier" onClick={() => updateItemQuantity(ptocarte.id,getItem(ptocarte.id).quantity-1)}>-</button>
-
-    </>
-    }
     
     
-    {getItem(ptocarte.id).quantity}
+    <div id="Plante_Affichage">
+      <h1 id="Plante_Nom">{plante.Nom}</h1>
+      <div id="Plante_Image_Div">
+          <img id="Plante_Image" src={plante.imgpath}/>
+      </div>
+      <div id="Plante_Info">
+      
+
+        <p id="Plante_Prix">Prix Unitaire : {plante.Prix}€</p>
 
 
-    </>
+        {
+        Presencepanier &&
+        
+        <button id="Plante_Panier" onClick={() => addItem(ptocarte)}><img id="Card_Panier_Img"/>Panier</button>
+        || 
+        <div id="Plante_Quantite_Div">
+        
+        <button id="Plante_Quantite_Edit" onClick={() => updateItemQuantity(ptocarte.id,getItem(ptocarte.id).quantity+1)}>+</button>
+        <p id="Plante_Quantite">{getItem(ptocarte.id).quantity}</p>
+        <button id="Plante_Quantite_Edit" onClick={() => updateItemQuantity(ptocarte.id,getItem(ptocarte.id).quantity-1)}>-</button>
+
+        </div>
+        }
+        
+        
+        
+    
+      </div>
+      <p id="Plante_Description">{plante.Description}</p>
+    </div>
 
   );
 }

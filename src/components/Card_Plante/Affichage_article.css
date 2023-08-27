@@ -1,0 +1,69 @@
+#Plante_Affichage{
+    width: 95%;
+    height: auto;
+    margin: auto;
+    margin-top: 10px;
+    display: grid;  
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-template-rows: auto;
+}#Plante_Nom{
+    color: darkgreen;
+    text-decoration: underline darkgreen;
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}#Plante_Image_Div{
+    grid-column: 1;
+    grid-row: 1 / 4;
+    width: 100%;
+    overflow: hidden;
+    border-radius:10px;
+    position: relative;
+}#Plante_Image{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}#Plante_Info{
+    grid-column: 2;
+    grid-row: 2;
+    padding: 5px;
+    display: flex;
+    
+    flex-direction: column;
+    
+    justify-content: space-around;
+
+    
+}#Plante_Quantite_Div{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}#Plante_Quantite{
+    padding: 0 5px;
+    justify-items: center;
+    justify-content: center;
+    
+    font-size: 1.3em;
+    color: darkgreen;
+}#Plante_Quantite_Edit{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 32px;
+    width: 32px;
+
+    font-size: 1.3em;
+    border-radius: 10px;
+    border: none;
+    color: antiquewhite;
+    background-color: darkgreen;
+
+}#Plante_Description{
+    grid-column: 2;
+    grid-row: 3/4;
+    text-align:left;
+    font-size: 1.2em;
+}

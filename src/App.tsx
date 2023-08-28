@@ -9,6 +9,8 @@ import Connexion from './components/Utilisateur/Connexion';
 import { CartProvider } from 'react-use-cart';
 import Panier from './components/panier';
 import Profil from './components/Utilisateur/profil';
+import NoPage from './components/NoPage';
+import Home from './components/Home';
 
 
 function App() {
@@ -24,12 +26,13 @@ function App() {
 
           <Routes>
 
-
+            <Route path="/" element={<Home/>} />
             <Route path="nos_plantes" element={<Affichage_produits/>} />
             <Route path="page_article/:id" element={<Affichage_article/>} />
             <Route path="panier" element={<Panier/>} />
             <Route path="connexion" element={<Connexion/>} />
             <Route path="profil" element={<Profil/>} />
+            <Route path="*" element={<NoPage/>} />
 
 
 

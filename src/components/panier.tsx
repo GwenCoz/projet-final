@@ -40,7 +40,7 @@ function Cart() {
               <div id="Article_Image_Div">
                 <img id="Article_Image" src={item.imgpath}/>
               </div>
-              <h3 id="Article_Nom">{item.Nom}</h3>
+              <a id="Article_Lien" href={`page_article/${item.id}`}><h3 id="Article_Nom">{item.Nom}</h3></a>
               <p id="Article_Prix_Unitaire">{item.price}€ / Unité</p>
               <div id="Article_Quantité_Div">
                 <button id="Article_Quantité_Edit"
@@ -64,10 +64,12 @@ function Cart() {
         ))}
         </div>
         <div id="Option_Panier">
-        <button className="btn btn-danger"
-               onClick={() => emptyCart()}>Vider le panier</button>
 
-        <h3>Pour un total de {totalItems} items : {cartTotal} €</h3>
+          <h1 id="Resumé_panier">TOTAL : {cartTotal} € - {totalItems} articles </h1>
+          <button className="btn btn-danger"
+                onClick={() => emptyCart()}>Vider le panier
+          </button>
+        
         </div>
       </div>
     );

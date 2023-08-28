@@ -56,9 +56,9 @@ function Affichage_article() {
         || 
         <div id="Plante_Quantite_Div">
         
-        <button id="Plante_Quantite_Edit" onClick={() => updateItemQuantity(ptocarte.id,getItem(ptocarte.id).quantity+1)}>+</button>
-        <p id="Plante_Quantite">{getItem(ptocarte.id).quantity}</p>
         <button id="Plante_Quantite_Edit" onClick={() => updateItemQuantity(ptocarte.id,getItem(ptocarte.id).quantity-1)}>-</button>
+        <p id="Plante_Quantite">{getItem(ptocarte.id).quantity}</p>
+        <button id="Plante_Quantite_Edit" onClick={() => updateItemQuantity(ptocarte.id,getItem(ptocarte.id).quantity+1)}>+</button>
 
         </div>
         }

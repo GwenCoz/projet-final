@@ -25,9 +25,6 @@ function Header(){
            <div>
 <div className="container-fluid">
 
-<nav className="navbar navbar-expand-sm justify-content-center bg-danger text-white">
-Mega soldes, une plante achetée, une deuxième vous est imposée!  
-</nav>
 </div>
 
 <div>
@@ -73,7 +70,7 @@ Mega soldes, une plante achetée, une deuxième vous est imposée!
 <div>
 <div className="container-fluid">
     <nav className="navbar navbar-expand-sm bg-success navbar-dark justify-content-center">  
-       <Dropdown>
+       {/* <Dropdown>
        <Dropdown.Toggle variant="success" id="dropdown-basic">
         Plantes d'intérieur
        </Dropdown.Toggle>
@@ -82,9 +79,18 @@ Mega soldes, une plante achetée, une deuxième vous est imposée!
         <Dropdown.Item href="/nos_plantes">Par Emplacement</Dropdown.Item>
         <Dropdown.Item href="/nos_plantes">Par Beauté</Dropdown.Item>
       </Dropdown.Menu>
-      </Dropdown> 
+      </Dropdown>  */}
 
       <Nav >
+        <Nav.Item>
+          <Nav.Link style={{color:"white"}} href="/"><b>Page d'accueil</b></Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link style={{color:"white"}} href="/nos_plantes" >Nos Plantes</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link style={{color:"white"}}>Plantes d'interieur</Nav.Link>
+        </Nav.Item>
         <Nav.Item>
           <Nav.Link style={{color:"white"}}>Plantes d'extérieur</Nav.Link>
         </Nav.Item>

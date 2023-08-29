@@ -1,0 +1,45 @@
+.icone{ 
+    height: 20px; margin: auto 5px;}
+.green{
+    filter: brightness(0) saturate(100%) invert(17%) sepia(91%) saturate(2844%) hue-rotate(102deg) brightness(92%) contrast(104%); color: darkgreen;}
+.antiqueWhite{
+    filter: brightness(0) saturate(100%) invert(100%) sepia(62%) saturate(649%) hue-rotate(307deg) brightness(100%) contrast(96%); color: antiquewhite;}
+
+#BarUtilisateur{
+    display: flex;
+    align-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 75px;
+    background-color: rgba(250, 235, 215, 0.80);
+}#BarBonjour{
+    position: relative;
+    left: 20px;
+}#Logo{
+    height: 100%;
+    position: relative;
+    margin: auto;
+}#BarUtilisateur_ListBouton{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 20px;
+
+    list-style: none;
+    margin: auto;
+}
+
+.List_Element{
+    color: darkgreen;
+    font-size: 1.2em;
+    margin: 10px;
+}.List_link{
+    text-decoration: none;
+    display: flex;
+}.List_nom{
+    display: flex;
+    width: fit-content;
+    margin: auto;
+    color: black;
+}

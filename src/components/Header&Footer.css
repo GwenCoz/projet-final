@@ -69,6 +69,7 @@
 }.List_link{
     text-decoration: none;
     display: flex;
+    align-items: center
 }.List_nom{
     display: flex;
     width: fit-content;
@@ -115,6 +116,8 @@
         height: 60px;
     }#BarUtilisateur_ListBouton{
         font-size: 1em;
+    }.List_Element{
+        margin: 4px;
     }.medium{
         height: 20px;
         width: 20px;

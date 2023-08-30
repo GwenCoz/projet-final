@@ -1,4 +1,6 @@
 import { useCart } from "react-use-cart";
+import "./panier.css";
+
 
 function Panier(){
 
@@ -29,35 +31,50 @@ function Cart() {
   
     return (
       <>
-        <h1>Votre Panier contient {totalUniqueItems} plantes différentes </h1>
-  
-        <ul>
+      <div id="Panier">
+        <h1 id="Panier_Contenu">Votre Panier contient {totalUniqueItems} plantes différentes </h1>
+        <div id="Liste_Article">
           {items.map((item) => (
-            <li key={item.id}>
-              {item.quantity} x {item.Nom} &mdash;
-              <button className="btn btn-success"
-                onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
-              >
-                -
-              </button>
-              <button  className="btn btn-warning"
-                onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
-              >
-                +
-              </button> 
-              <button className="btn btn-danger"
-               onClick={() => removeItem(item.id)}>Supprimer</button>
-            </li>
+
+            <>
+            <h3>Pour un total de {totalItems} items : {cartTotal} €</h3><a href="/commande"><h3>Passer ma commande</h3></a><div id="Article" key={item.id}>
+              <div id="Article_Panier">
+                <div id="Article_Image_Div">
+                  <img id="Article_Image" src={item.imgpath} />
+                </div>
+                <a id="Article_Lien" href={`page_article/${item.id}`}><h3 id="Article_Nom">{item.Nom}</h3></a>
+                <p id="Article_Prix_Unitaire">{item.price}€ / Unité</p>
+                <div id="Article_Quantité_Div">
+                  <button id="Article_Quantité_Edit"
+                    onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
+                  >-</button>
+                  <p id="Article_Quantité">{item.quantity}</p>
+                  <button id="Article_Quantité_Edit"
+                    onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
+                  >+</button>
+
+                  <button id="Article_Quantité_Supp"
+                    onClick={() => removeItem(item.id)}><img id="Article_Trash_Img" src={"/Images/logo_poubelle.png"} />
+                  </button>
+
+                </div>
+                <p id="Article_Prix_Total">Sous-Total : {item.itemTotal}€</p>
+              </div>
+              <hr id="Separateur" />
+
+            </div>
+            </>
           ))}
-        </ul>
-        <button className="btn btn-danger"
-               onClick={() => emptyCart()}>Vider le panier</button>
+        </div>
+        <div id="Option_Panier">
 
-        <h3>Pour un total de {totalItems} items : {cartTotal} €</h3>
-
-        <a href="/commande"><h3>Passer ma commande</h3></a>
-
-
+          <h1 id="Resumé_panier">TOTAL : {cartTotal} € - {totalItems} articles </h1>
+          <button className="btn btn-danger"
+                onClick={() => emptyCart()}>Vider le panier
+          </button>
+        
+        </div>
+      </div>
       </>
     );
   }

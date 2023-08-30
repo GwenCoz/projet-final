@@ -55,19 +55,15 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    justify-content: space-around;
-    
-    
-    
-    
+    justify-content: left;
 
     background-color: antiquewhite;
 
     top: 10px;
     left: 10px;
     border-radius: 10px;
-    width: 20%;
-    height: 35px;
+    width: 36px;
+    height: 36px;
 
 }
 #Card_Prix{
@@ -81,18 +77,22 @@
 
     visibility: hidden;
     padding-top: 5px;
-    position: relative;
+    position: absolute;
+    left: 30px;
+    width: 45px;
+    padding-right: 5px;
     height: auto;
     font-weight: 600;
-    font-size: medium;
+    text-align: right;
+    font-size: medium;   
+
 }
 #Card_Panier{
-    
     position: relative;
     justify-content: left;
     background: none;
     border-radius: 10px;
-    height: 35px;
+    height: 36px;
     border: 0px;
 }
 #Card_Panier_Img{
@@ -101,6 +101,44 @@
     transition-delay: 0;
 
     height: 20px;
+}#Card_Panier_Plus{
+    position: absolute;
+    border-radius: 10px 0 0 0;
+    height: 18px;
+    width: 16px;
+    border: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 600;
+    background: none;
+}#Card_Panier_Moins{
+    position: absolute;
+    top: 18px;
+    border-radius: 0 0 0 10px ;
+    height: 18px;
+    width: 16px;
+    border: 0px;
+    font-weight: 600;
+    background: none;
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-content: center;
+    
+}#Card_Panier_Quantité{
+    position: absolute;
+    border-radius: 0 10px 10px 0;
+    width: 20px;
+    height: 36px;
+    left: 15px;
+    text-align: center;
+    line-height: 35px;
+    border-right: 12px;
+    border-color: black;
+    font-weight: 600;
+    
 }
 
 #Card_Fond:hover{
@@ -123,7 +161,7 @@
         color: aliceblue;
         background-color: rgba(0, 100, 0, 0.75);
     }#Card_Btn{
-        width: fit-content;
+        width: 85px;
         background-color: rgba(0, 100, 0, 0.75);
     }#Card_Panier{
         background: none;
@@ -133,6 +171,14 @@
     }
     #Card_Prix{
         visibility:visible;
+    }
+    #Card_Panier_Quantité{
+        color: antiquewhite;        
+    }
+    #Card_Panier_Moins{
+        color: antiquewhite;
+    }#Card_Panier_Plus{
+        color: antiquewhite;
     }
 }
 

@@ -10,6 +10,8 @@ import { CartProvider } from 'react-use-cart';
 import Profil from './components/Utilisateur/profil';
 import Commander from './components/Achats_utilisateur/Commander';
 import Panier from './components/Achats_utilisateur/Panier';
+import NoPage from './components/NoPage';
+import Home from './components/Home';
 
 
 function App() {
@@ -25,13 +27,14 @@ function App() {
 
           <Routes>
 
-
+            <Route path="/" element={<Home/>} />
             <Route path="nos_plantes" element={<Affichage_produits/>} />
             <Route path="page_article/:id" element={<Affichage_article/>} />
             <Route path="panier" element={<Panier/>} />
             <Route path="connexion" element={<Connexion/>} />
             <Route path="profil" element={<Profil/>} />
             <Route path="commande" element={<Commander/>} />
+            <Route path="*" element={<NoPage/>} />
 
 
 

@@ -67,39 +67,29 @@ function Header(){
         </nav>
         
 
-        <div>
-          <div className="container-fluid">
-            <nav className="navbar navbar-expand-sm bg-success navbar-dark justify-content-center m-0 p-0">  
-              {/* <Dropdown>
-              <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Plantes d'intérieur
-              </Dropdown.Toggle>
-                <Dropdown.Menu>
-                <Dropdown.Item href="/nos_plantes">Par Taille</Dropdown.Item>
-                <Dropdown.Item href="/nos_plantes">Par Emplacement</Dropdown.Item>
-                <Dropdown.Item href="/nos_plantes">Par Beauté</Dropdown.Item>
-              </Dropdown.Menu>
-              </Dropdown>  */}
+        
+        <div id='Barre_Navigation'>
+           
+            {/* <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              Plantes d'intérieur
+            </Dropdown.Toggle>
+              <Dropdown.Menu>
+              <Dropdown.Item href="/nos_plantes">Par Taille</Dropdown.Item>
+              <Dropdown.Item href="/nos_plantes">Par Emplacement</Dropdown.Item>
+              <Dropdown.Item href="/nos_plantes">Par Beauté</Dropdown.Item>
+            </Dropdown.Menu>
+            </Dropdown>  */}
+            
+            <a className="Link btn_div Gras" href='/'> <Image className='icone white small' src="./Images/Logo_home.png" /> <p className='Btn_text'>Home</p> </a>
+            
 
-              <Nav >
-                <Nav.Item>
-                  <Nav.Link style={{color:"white"}} href="/"><Image className='icone antiqueWhite small' src="./Images/Logo_home.png" /> <b>Page d'accueil</b></Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link style={{color:"white"}} href="/nos_plantes" >Nos Plantes</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link style={{color:"white"}}>Plantes d'interieur</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link style={{color:"white"}}>Plantes d'extérieur</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link style={{color:"white"}}>A propos</Nav.Link>
-                </Nav.Item>
-              </Nav>
-            </nav>
-          </div>
+            <div id='Plante_Section'>
+              <a  id="NosPlantes" href="/nos_plantes" ><p>Nos Plantes</p></a>
+              <a  href="/nos_plantes" ><p>Plantes d'intérieur</p></a>
+              <a  href="/nos_plantes" ><p>Plantes d'extérieur</p></a>
+            </div>
+            <a className="Link btn_div" href='#'> <p className='Btn_text'>A propos</p> </a>
         </div>
       </div>
     </div>      

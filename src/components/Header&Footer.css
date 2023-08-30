@@ -1,5 +1,7 @@
 .icone{ 
     margin: auto 5px;}
+.white{
+    filter: invert();}
 .green{
     filter: brightness(0) saturate(100%) invert(17%) sepia(91%) saturate(2844%) hue-rotate(102deg) brightness(92%) contrast(104%); color: darkgreen;}
 .antiqueWhite{
@@ -7,7 +9,12 @@
 .small{
     height: 15px;width: 15px;}
 .medium{
-    height: 30px;width: 30px;margin:  0 15px;}        
+    height: 30px;width: 30px;margin:  0 15px;}      
+    
+
+.Gras{
+    font-weight: bold;
+}
 
 #BarUtilisateur{
     display: flex;
@@ -51,7 +58,6 @@
 
 .List_Element{
     color: darkgreen;
-    font-size: 1.2em;
     margin: 10px;
 }.List_link{
     text-decoration: none;
@@ -60,5 +66,37 @@
     display: flex;
     width: fit-content;
     margin: auto;
-    color: black;
+}
+
+
+#Barre_Navigation{
+    background-color: darkgreen;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}.Btn_div{
+    align-items: center;
+}.Btn_text{
+    width: fit-content;
+    margin: 5px;
+    color: white;
+}
+.Link{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+}
+
+#Plante_Section{
+    display: flex;
+}
+#Barre_Navigation p{
+    font-size: 1.1em;
+    color: white;
+    margin: auto;
+    
+}#Plante_Section a{
+    text-decoration: none;
+    margin: 10px;
 }

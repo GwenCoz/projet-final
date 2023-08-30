@@ -37,25 +37,43 @@
     justify-content: space-around;
 
     
-}#Plante_Quantite_Div{
+}#Plante_Panier{
+    border-radius: 10px;
+    border: none;
+    color: antiquewhite;
+    background-color: darkgreen;
+    font-size: 1.3em;
+    height: 40px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}#Panier_Img{
+    filter: brightness(0) saturate(100%) invert(100%) sepia(62%) saturate(649%) hue-rotate(307deg) brightness(100%) contrast(96%);
+    margin: 5px;
+    height: 23px;
+    width: 23px;
+}#Plante_Panier p{
+    margin: 5px;
+}
+#Plante_Quantite_Div{
     display: flex;
     justify-content: center;
     align-items: baseline;
 }#Plante_Quantite{
-    padding: 0 5px;
+    padding: 0 9px;
     justify-items: center;
     justify-content: center;
-    
+    margin: 0;
     font-size: 1.3em;
     color: darkgreen;
 }#Plante_Quantite_Edit{
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    height: 32px;
-    width: 32px;
+    height: 40px;
+    width: 40px;
 
-    font-size: 1.3em;
+    font-size: 1.4em;
     border-radius: 10px;
     border: none;
     color: antiquewhite;

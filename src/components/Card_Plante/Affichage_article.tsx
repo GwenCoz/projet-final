@@ -55,7 +55,7 @@ function Affichage_article() {
         {
         !item &&
         
-        <button id="Plante_Panier" onClick={() => addItem(ptocarte)}><img id="Card_Panier_Img"/>Panier</button>
+        <button id="Plante_Panier" onClick={() => addItem(ptocarte)}><img id="Panier_Img" src={"/Images/logo_panier.png"} /><p>Panier</p></button>
         || 
         <div id="Plante_Quantite_Div">
         

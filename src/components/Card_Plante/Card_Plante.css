@@ -9,13 +9,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 10px;
 }
 
 #Card_Fond{
 
     height: 400px;
     width: 24%;
-    background-color: antiquewhite;
+    background-color: rgba(250, 235, 215, 0.35);;
     margin: 5px;
     padding: 5px;
     border-radius:10px;

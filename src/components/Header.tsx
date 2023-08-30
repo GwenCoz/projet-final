@@ -40,8 +40,8 @@ function Header(){
 
           <ul id="BarUtilisateur_ListBouton">
             <li className="List_Element">
-              <a className="List_link" href="/panier"> <Image className='icone green' src="./Images/Logo_panier.png" /> <p className='List_nom green'>Panier</p></a>
-              <p>{totalItems}</p>
+              <a className="List_link" href="/panier"> { (totalItems!=0) && <p id='pastille_panier'>{totalItems}</p>}<Image className='icone green medium' src="./Images/Logo_panier.png" /> <p className='List_nom green'>Panier</p></a>
+              
             </li>
     
             {utilisateur &&
@@ -83,7 +83,7 @@ function Header(){
 
               <Nav >
                 <Nav.Item>
-                  <Nav.Link style={{color:"white"}} href="/"><Image className='icone antiqueWhite' src="./Images/Logo_home.png" /> <b>Page d'accueil</b></Nav.Link>
+                  <Nav.Link style={{color:"white"}} href="/"><Image className='icone antiqueWhite small' src="./Images/Logo_home.png" /> <b>Page d'accueil</b></Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link style={{color:"white"}} href="/nos_plantes" >Nos Plantes</Nav.Link>

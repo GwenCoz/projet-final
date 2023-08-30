@@ -1,9 +1,13 @@
 .icone{ 
-    height: 20px; margin: auto 5px;}
+    margin: auto 5px;}
 .green{
     filter: brightness(0) saturate(100%) invert(17%) sepia(91%) saturate(2844%) hue-rotate(102deg) brightness(92%) contrast(104%); color: darkgreen;}
 .antiqueWhite{
     filter: brightness(0) saturate(100%) invert(100%) sepia(62%) saturate(649%) hue-rotate(307deg) brightness(100%) contrast(96%); color: antiquewhite;}
+.small{
+    height: 15px;width: 15px;}
+.medium{
+    height: 30px;width: 30px;margin:  0 15px;}        
 
 #BarUtilisateur{
     display: flex;
@@ -25,9 +29,24 @@
     flex-direction: row;
     position: absolute;
     right: 20px;
+    font-size: 1.2em;
 
     list-style: none;
     margin: auto;
+}#pastille_panier{
+    position: absolute;
+    border-radius: 10px;
+    background-color: rgb(240, 58, 58);
+    height: 20px;
+    width: 20px;
+    color: antiquewhite;
+    display: flex;
+    font-size: 0.6em;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    margin-left: 35px;
+    top: 5px;
 }
 
 .List_Element{

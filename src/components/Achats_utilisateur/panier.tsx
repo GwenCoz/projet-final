@@ -37,7 +37,7 @@ function Cart() {
           {items.map((item) => (
 
             <>
-            <h3>Pour un total de {totalItems} items : {cartTotal} €</h3><a href="/commande"><h3>Passer ma commande</h3></a><div id="Article" key={item.id}>
+            <div id="Article" key={item.id}>
               <div id="Article_Panier">
                 <div id="Article_Image_Div">
                   <img id="Article_Image" src={item.imgpath} />
@@ -72,7 +72,7 @@ function Cart() {
           <button className="btn btn-danger"
                 onClick={() => emptyCart()}>Vider le panier
           </button>
-        
+          <a href="/commande"><h3>Passer ma commande</h3></a>
         </div>
       </div>
       </>

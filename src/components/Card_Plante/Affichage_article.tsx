@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 import { Plante } from "./Plante";
 import { useParams } from "react-router-dom";
-
 import { Item, useCart } from "react-use-cart";
 import { GetPlante } from "../Api_objects";
 import "./Affichage_article.css"
@@ -54,15 +53,15 @@ function Affichage_article() {
 
 
         {
-        Presencepanier &&
+        !item &&
         
         <button id="Plante_Panier" onClick={() => addItem(ptocarte)}><img id="Card_Panier_Img"/>Panier</button>
         || 
         <div id="Plante_Quantite_Div">
         
-        <button id="Plante_Quantite_Edit" onClick={() => updateItemQuantity(ptocarte.id,getItem(ptocarte.id).quantity-1)}>-</button>
-        <p id="Plante_Quantite">{getItem(ptocarte.id).quantity}</p>
-        <button id="Plante_Quantite_Edit" onClick={() => updateItemQuantity(ptocarte.id,getItem(ptocarte.id).quantity+1)}>+</button>
+        <button id="Plante_Quantite_Edit" onClick={() => updateItemQuantity(item.id,item.quantity-1)}>-</button>
+        <p id="Plante_Quantite">{item.quantity}</p>
+        <button id="Plante_Quantite_Edit" onClick={() => updateItemQuantity(item.id,item.quantity+1)}>+</button>
 
         </div>
         }

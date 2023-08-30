@@ -9,7 +9,7 @@ import Connexion from './components/Utilisateur/Connexion';
 import { CartProvider } from 'react-use-cart';
 import Profil from './components/Utilisateur/profil';
 import Commander from './components/Achats_utilisateur/Commander';
-import Panier from './components/Achats_utilisateur/Panier';
+import Panier from './components/Achats_utilisateur/panier';
 import NoPage from './components/NoPage';
 import Home from './components/Home';
 

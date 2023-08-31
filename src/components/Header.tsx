@@ -36,7 +36,7 @@ function Header(){
         }
           
         <nav id='BarUtilisateur'>
-          <Image id='Logo' src="./Images/logo.png" />
+          <Image id='Logo' src="./Images/logo.png" onClick={()=>window.location.href ="/"}/>
 
           <ul id="BarUtilisateur_ListBouton">
             <li className="List_Element">

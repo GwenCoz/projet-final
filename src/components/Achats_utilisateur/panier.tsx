@@ -32,7 +32,6 @@ function Cart() {
     return (
       <>
       <div id="Panier">
-        <h1 id="Panier_Contenu">Votre Panier contient {totalUniqueItems} plantes différentes </h1>
         <div id="Liste_Article">
           {items.map((item) => (
 
@@ -58,6 +57,7 @@ function Cart() {
                   </button>
 
                 </div>
+                <hr id="Separateur" />
                 <p id="Article_Prix_Total">Sous-Total : {item.itemTotal}€</p>
               </div>
               <hr id="Separateur" />
@@ -67,12 +67,20 @@ function Cart() {
           ))}
         </div>
         <div id="Option_Panier">
+          <div id="Prix_Panier">
+            <p id="Total"> TOTAL :</p> <p id="Euro">{cartTotal} € </p>
+          </div>
+          <div id="Quantité_Panier">
+            <p id="Nombre">{totalItems} articles </p>
+            
+            <button id="Btn_Vider_Panier"
+              onClick={() => emptyCart()}><p>Vider panier</p>
+            </button>
+          </div>
 
-          <h1 id="Resumé_panier">TOTAL : {cartTotal} € - {totalItems} articles </h1>
-          <button className="btn btn-danger"
-                onClick={() => emptyCart()}>Vider le panier
-          </button>
-          <a href="/commande"><h3>Passer ma commande</h3></a>
+          <div id="Valider_Panier">
+            <a href="/commande"><p>Valider Commande</p></a>
+          </div>
         </div>
       </div>
       </>

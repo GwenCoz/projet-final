@@ -10,7 +10,6 @@ const Connexion = () =>
     {
       if (utilisateur && utilisateur.id==0)
       {
-
       seterreurconnexion (true);
       setcouleurtexte("red");
       settremblement(true);
@@ -71,34 +70,31 @@ const Connexion = () =>
 
     return (
 
-    <> 
-    Déjà Client?
+    <div id="Div_Formulaire"> 
+      <h5 id="Titre"> Déjà Client? </h5>
 
-    <form className="Formulaire-animation" style={{ animationPlayState:tremblement?"running":"paused"}} onSubmit={handleSubmit}>
-      <label style={{'color': couleurtexte}}>Email:
+      <form className="Formulaire-animation" style={{ animationPlayState:tremblement?"running":"paused"}} onSubmit={handleSubmit}>
+        <label >Email :</label>
         <input type="email"
         onChange={(e) => setconnectinfo({...connectinfo,email:e.target.value})}
         value={connectinfo.email}
         />
-        
-        
-        
-      </label><br/>
 
-      <label style={{'color': couleurtexte}}>Mot de passe:
+        <label > Mot de passe : </label>
         <input type="password"
-         onChange={(e) => setconnectinfo({...connectinfo,mdp:e.target.value})}
-         value={connectinfo.mdp}
+        onChange={(e) => setconnectinfo({...connectinfo,mdp:e.target.value})}
+        value={connectinfo.mdp}
           />
-      </label>
+          
+        
 
-      <input type="submit"
-       />
-    </form>
+        <input id="btn_submit" type="submit"
+        />
+      </form>
 
-    {erreurconnexion && <h5>Erreur dans l'email ou le mot de passe, veuillez vérifier vos informations.</h5>}
+      {erreurconnexion && <h5>Erreur dans l'email ou le mot de passe, veuillez vérifier vos informations.</h5>}
 
-    </>   
+    </div>   
     );
 
 

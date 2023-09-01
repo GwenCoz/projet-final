@@ -3,6 +3,7 @@ import { Utilisateur } from "./utilisateur";
 import { GetUtilisateur } from "../Api_objects";
 import "./connexion.css"
 
+export var user = new Utilisateur;
 const Connexion = () =>
 
 {
@@ -19,7 +20,6 @@ const Connexion = () =>
     }
 
     const [connectinfo, setconnectinfo] = useState({email:"",mdp:""});
-
     const [utilisateur,setutilisateur] = useState<Utilisateur>(null);
     const [erreurconnexion,seterreurconnexion] = useState (false);
     const [couleurtexte,setcouleurtexte] = useState ("black");
@@ -31,6 +31,7 @@ const Connexion = () =>
 
       await myPromise.then(function(response) {
         setutilisateur(response);
+        user = utilisateur;
       });
 
         if (utilisateur==null || utilisateur.id==0)

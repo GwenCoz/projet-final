@@ -120,18 +120,59 @@
 }
 
 #Option_Panier{
-    background-color: rgba(128, 128, 128, 0.259);
+    background-color: rgba(128, 128, 128, 0.15);
     margin: 15px;
     border-radius: 10px;
-    padding: 5px;
+    padding: 15px;
+    min-width: 275px;
+    height: fit-content;
+    position: relative;
+}#Option_Panier div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }#Option_Panier p{
     width: 95%;
     color: darkgreen;
     font-size: 2.2em;
-    margin: auto;
-}#Option_Panier div{
-    display: flex;
-    flex-direction: row;
+    margin: 5px auto;
+    width: fit-content;
+}#Option_Panier #Total{
+    text-decoration: underline solid darkgreen 2px;
+    text-underline-position: under;
+}
+#Option_Panier #Nombre{
+    font-size: 1.5em;
+}#Quantité_Panier{
+    margin: 10px 0 15px 0;
 }
 
+#Btn_Vider_Panier{
+    background-color: #dc3545;
+    border-radius: 10px;
+    margin: auto;
+    border: none;
+    padding: 5px 10px;
+}#Btn_Vider_Panier p{
+   color: antiquewhite;
+   font-size: 1.2em;
+}
+#Valider_Panier{
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: darkgreen;
+    margin: 10px auto;
+    width: fit-content;
+}#Valider_Panier a{
+    text-decoration: none;
+}#Valider_Panier p{
+    color: antiquewhite;
+    font-size: 1.2em;
+}
 
+@media only screen and (max-width: 860px) {
+    #Option_Panier {
+        width: 315px;
+    }
+}

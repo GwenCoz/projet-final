@@ -73,12 +73,13 @@ function Cart() {
           <div id="Quantité_Panier">
             <p id="Nombre">{totalItems} articles </p>
             
-            <button className="btn btn-danger"
-              onClick={() => emptyCart()}>Vider le panier
+            <button id="Btn_Vider_Panier"
+              onClick={() => emptyCart()}><p>Vider panier</p>
             </button>
           </div>
+
           <div id="Valider_Panier">
-            <a href="/commande"><h3>Passer ma commande</h3></a>
+            <a href="/commande"><p>Valider Commande</p></a>
           </div>
         </div>
       </div>

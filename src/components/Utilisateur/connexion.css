@@ -13,3 +13,37 @@ animation-play-state: paused;
 animation: Tremblement infinite 0.1s linear;
 }
 
+#Div_Connexion{
+  background-color: rgba(250, 235, 215, 0.35);
+  border: rgba(250, 235, 215, 0.5) 2px solid;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 10px;
+  width: fit-content;
+}#Titre{
+  font-size: 1.5em;
+  color: darkgreen;
+  margin-bottom: 10px;
+}form{
+  display: grid;
+  grid-template-columns: 150px 200px;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5em;
+}form label{
+  text-align: right;
+}#btn_submit{
+  grid-column: 1/3;
+  justify-content: center;
+  width: 150px;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: darkgreen;
+  color: antiquewhite;
+  font-size: 1.3em;
+  padding: 5px;
+}
+

@@ -81,7 +81,7 @@ function Header(){
             </Dropdown.Menu>
             </Dropdown>  */}
             
-            <a className="Link btn_div Gras" href='/'> <Image className='icone white small' src="./Images/Logo_home.png" /> <p className='Btn_text'>Home</p> </a>
+            <a className="Link btn_div Gras" href='/'> <Image className='icone white small' src="./Images/Logo_home.png" /> <p className='Btn_text'>Accueil</p> </a>
             
 
             <div id='Plante_Section'>

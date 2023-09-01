@@ -12,8 +12,6 @@ import Commander from './components/Achats_utilisateur/Commander';
 import Panier from './components/Achats_utilisateur/panier';
 import NoPage from './components/NoPage';
 import Home from './components/Home';
-import { createContext, useEffect, useState } from 'react';
-
 
 function App() {
 

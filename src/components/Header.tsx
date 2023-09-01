@@ -28,14 +28,14 @@ function Header(){
   return (
     <div>
       <div>
-        
-        {utilisateur && 
-          <div id='BarBonjour'>
-            Bonjour {utilisateur.Prenom} {utilisateur.Nom}
-          </div>
-        }
           
         <nav id='BarUtilisateur'>
+
+          {utilisateur && 
+            
+            <p id='Bonjour'>Bonjour {utilisateur.Prenom} ! </p>
+            
+          }
           <Image id='Logo' src="./Images/logo.png" />
 
           <ul id="BarUtilisateur_ListBouton">

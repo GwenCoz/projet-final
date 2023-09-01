@@ -29,10 +29,12 @@
     position: relative;
     height: 75px;
     background-color: rgba(250, 235, 215, 0.35);
-    
-}#BarBonjour{
-    position: relative;
-    left: 20px;
+    font-size: 1.2em;
+}#Bonjour{
+    margin: auto 0;
+    color: darkgreen;
+    margin-left: 10px;
+    position: absolute;
 }#Logo{
     height: 100%;
     position: relative;
@@ -43,7 +45,6 @@
     align-items: center;
     position: absolute;
     right: 20px;
-    font-size: 1.2em;
 
     list-style: none;
     margin: auto;
@@ -75,6 +76,7 @@
     width: fit-content;
     margin: auto;
 }
+
 
 
 #Barre_Navigation{
@@ -111,11 +113,10 @@
 
 
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 950px) {
     #BarUtilisateur{
         height: 60px;
-    }#BarUtilisateur_ListBouton{
-        font-size: 1em;
+        font-size: 1.1em;
     }.List_Element{
         margin: 4px;
     }.medium{
@@ -130,11 +131,10 @@
     }#Barre_Navigation p{
         font-size: 0.9em;        
     }
-}@media only screen and (max-width: 600px) {
+}@media only screen and (max-width: 780px) {
     #BarUtilisateur{
         height: 45px;
-    }#BarUtilisateur_ListBouton{
-        font-size: 0.9em;
+        font-size: 1em;
     }.List_Element{
         margin: 3px;
     }.medium{
@@ -148,5 +148,31 @@
         top: 0;
     }#Barre_Navigation p{
         font-size: 0.8em;        
+    }
+}@media only screen and (max-width: 700px) {
+    #BarUtilisateur{
+        height: 35px;
+        font-size: 0.9em;
+    }.List_Element{
+        margin: 3px;
+    }.medium{
+        height: 15px;
+        width: 15px;
+        margin: 2px;
+    }#pastille_panier{
+        height: 8px;
+        width: 8px;
+        color: rgba(0, 0, 0, 0);
+        margin-left: 10px;
+        top: 5px;
+    }#Barre_Navigation p{
+        font-size: 0.8em;        
+    }
+}@media only screen and (max-width: 700px) {
+    #Bonjour{
+        position: relative;
+    }#BarUtilisateur_ListBouton{
+        position: relative;
+        margin: 0;
     }
 }

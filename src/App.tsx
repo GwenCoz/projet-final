@@ -12,6 +12,7 @@ import Commander from './components/Achats_utilisateur/Commander';
 import Panier from './components/Achats_utilisateur/panier';
 import NoPage from './components/NoPage';
 import Home from './components/Home';
+import Inscription from './components/Utilisateur/Inscription';
 
 function App() {
 
@@ -28,17 +29,15 @@ function App() {
 
           <Routes>
 
-            <Route path="/" element={<Home />} />
-            <Route path="nos_plantes" element={<Affichage_produits />} />
-            <Route path="page_article/:id" element={<Affichage_article />} />
-            <Route path="panier" element={<Panier />} />
-            <Route path="connexion" element={<Connexion />} />
-            <Route path="profil" element={<Profil />} />
-            <Route path="commande" element={<Commander />} />
-            <Route path="*" element={<NoPage />} />
-
-
-
+            <Route path="/" element={<Home/>} />
+            <Route path="nos_plantes" element={<Affichage_produits/>} />
+            <Route path="page_article/:id" element={<Affichage_article/>} />
+            <Route path="panier" element={<Panier/>} />
+            <Route path="connexion" element={<Connexion/>} />
+            <Route path="profil" element={<Profil/>} />
+            <Route path="commande" element={<Commander/>} />
+            <Route path="*" element={<NoPage/>} />
+            <Route path="inscription" element={<Inscription/>} />
 
           </Routes>
 

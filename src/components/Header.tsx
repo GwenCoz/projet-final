@@ -46,16 +46,16 @@ function Header(){
   return (
     <div>
       <div>
-        
-        {utilisateur && 
-          <div id='BarBonjour'>
-            Bonjour {utilisateur.Prenom} {utilisateur.Nom}
-          </div>
-        }
           
         <nav id='BarUtilisateur'>
-          <Image id='Logo' src="./Images/logo.png" onClick={()=>window.location.href ="/"}/>
 
+          {utilisateur && 
+            
+            <p id='Bonjour'>Bonjour {utilisateur.Prenom} ! </p>
+            
+          }
+          <Image id='Logo' src="./Images/logo.png" onClick={()=>window.location.href ="/"}/>
+          
           <ul id="BarUtilisateur_ListBouton">
             <li className="List_Element">
               <a className="List_link" href="/panier"> { (totalItems!=0) && <p id='pastille_panier'>{totalItems}</p>}<Image className='icone green medium' src="./Images/Logo_panier.png" /> <p className='List_nom green'>Panier</p></a>
@@ -99,7 +99,7 @@ function Header(){
             </Dropdown.Menu>
             </Dropdown>  */}
             
-            <a className="Link btn_div Gras" href='/'> <Image className='icone white small' src="./Images/Logo_home.png" /> <p className='Btn_text'>Home</p> </a>
+            <a className="Link btn_div Gras" href='/'> <Image className='icone white small' src="./Images/Logo_home.png" /> <p className='Btn_text'>Accueil</p> </a>
             
 
             <div id='Plante_Section'>

@@ -36,8 +36,8 @@ function Header(){
             <p id='Bonjour'>Bonjour {utilisateur.Prenom} ! </p>
             
           }
-          <Image id='Logo' src="./Images/logo.png" />
-
+          <Image id='Logo' src="./Images/logo.png" onClick={()=>window.location.href ="/"}/>
+          
           <ul id="BarUtilisateur_ListBouton">
             <li className="List_Element">
               <a className="List_link" href="/panier"> { (totalItems!=0) && <p id='pastille_panier'>{totalItems}</p>}<Image className='icone green medium' src="./Images/Logo_panier.png" /> <p className='List_nom green'>Panier</p></a>

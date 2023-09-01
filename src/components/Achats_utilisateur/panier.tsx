@@ -24,13 +24,15 @@ function Cart() {
       emptyCart,
       cartTotal,
       totalItems,
+      metadata,
 
     } = useCart();
   
-    if (isEmpty) return <p>Votre panier est vide</p>;
+    if (isEmpty) return <p> {metadata["logged"]} Votre panier est vide</p>;
   
     return (
       <>
+      {metadata["logged"]}
       <div id="Panier">
         <div id="Liste_Article">
           {items.map((item) => (

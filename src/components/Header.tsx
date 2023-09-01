@@ -1,29 +1,47 @@
 import Image from 'react-bootstrap/Image';
-import Nav from 'react-bootstrap/Nav';
-import Dropdown from 'react-bootstrap/Dropdown';
 import { useEffect,useState } from 'react';
 import { Utilisateur } from './Utilisateur/utilisateur';
 import "./Header&Footer.css";
 import { useCart } from 'react-use-cart';
 
-function Deconnexion()
-{
-  sessionStorage.clear();
-  window.location.reload();
-}
+
 
 function Header(){
 
+  const {
+    totalItems,
+    emptyCart,
+    updateCartMetadata,
+    metadata
+
+  } = useCart();
+
+
   const [utilisateur,setutilisateur] = useState<Utilisateur>(null)
+
 
   if (utilisateur==null && sessionStorage.getItem("user"))
   {
     setutilisateur (JSON.parse (sessionStorage.getItem ("user")));
+    updateCartMetadata ({"logged":true})
   }
 
-  const {
-    totalItems,
-  } = useCart();
+  if (!utilisateur && metadata["logged"])
+  {
+    emptyCart();
+    updateCartMetadata ({"logged":false})
+  }
+
+
+
+
+  function Deconnexion()
+{
+  sessionStorage.clear();
+  emptyCart();
+  window.location.reload();
+  
+}
   
   return (
     <div>

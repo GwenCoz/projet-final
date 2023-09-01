@@ -13,7 +13,7 @@ animation-play-state: paused;
 animation: Tremblement infinite 0.1s linear;
 }
 
-#Div_Connexion{
+#Div_Formulaire{
   background-color: rgba(250, 235, 215, 0.35);
   border: rgba(250, 235, 215, 0.5) 2px solid;
   margin: 10px auto;

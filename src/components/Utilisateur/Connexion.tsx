@@ -70,17 +70,17 @@ const Connexion = () =>
 
     return (
 
-    <div id="Div_Connexion"> 
+    <div id="Div_Formulaire"> 
       <h5 id="Titre"> Déjà Client? </h5>
 
       <form className="Formulaire-animation" style={{ animationPlayState:tremblement?"running":"paused"}} onSubmit={handleSubmit}>
-        <label style={{'color': couleurtexte}}>Email :</label>
+        <label >Email :</label>
         <input type="email"
         onChange={(e) => setconnectinfo({...connectinfo,email:e.target.value})}
         value={connectinfo.email}
         />
 
-        <label style={{'color': couleurtexte}}> Mot de passe : </label>
+        <label > Mot de passe : </label>
         <input type="password"
         onChange={(e) => setconnectinfo({...connectinfo,mdp:e.target.value})}
         value={connectinfo.mdp}

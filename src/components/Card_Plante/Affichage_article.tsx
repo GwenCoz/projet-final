@@ -42,42 +42,42 @@ function Affichage_article() {
     
     
     <div id="Affichage">
-    <div id="Plante_Affichage">
-      <div id="Plante_Titre">
-        <h1 id="Plante_Nom">{plante.Nom}</h1>
-        <p id="Plante_Prix_Unitaire">Prix Unitaire : {plante.Prix}€</p>
+      <div id="Plante_Affichage">
+        <div id="Plante_Titre">
+          <h1 id="Plante_Nom">{plante.Nom}</h1>
+          <p id="Plante_Prix_Unitaire">Prix Unitaire : {plante.Prix}€</p>
+          </div>
+        <div id="Plante_Image_Div">
+            <img id="Plante_Image" src={plante.imgpath}/>
         </div>
-      <div id="Plante_Image_Div">
-          <img id="Plante_Image" src={plante.imgpath}/>
-      </div>
-      <div id="Plante_Info">
-        {
-        !item &&
-        <>
-          <button id="Plante_Panier" onClick={() => addItem(ptocarte)}><img id="Panier_Img" src={"/Images/logo_panier.png"} /><p>Panier</p></button>
-    
-        </>
-        ||
-        <>
-        
-        <div id="Plante_Quantite_Div">
-        
-          <button id="Plante_Quantite_Edit" onClick={() => updateItemQuantity(item.id,item.quantity-1)}>-</button>
-          <p id="Plante_Quantite">{item.quantity}</p>
-          <button id="Plante_Quantite_Edit" onClick={() => updateItemQuantity(item.id,item.quantity+1)}>+</button>
+        <div id="Plante_Info">
+          {
+          !item &&
+          <>
+            <button id="Plante_Panier" onClick={() => addItem(ptocarte)}><img id="Panier_Img" src={"/Images/logo_panier.png"} /><p>Panier</p></button>
+      
+          </>
+          ||
+          <>
           
-          <button id="Plante_Quantite_Supp"
-            onClick={() => removeItem(item.id)}><img id="Article_Trash_Img" src={"/Images/logo_poubelle.png"} />
-          </button>
+          <div id="Plante_Quantite_Div">
+          
+            <button id="Plante_Quantite_Edit" onClick={() => updateItemQuantity(item.id,item.quantity-1)}>-</button>
+            <p id="Plante_Quantite">{item.quantity}</p>
+            <button id="Plante_Quantite_Edit" onClick={() => updateItemQuantity(item.id,item.quantity+1)}>+</button>
+            
+            <button id="Plante_Quantite_Supp"
+              onClick={() => removeItem(item.id)}><img id="Article_Trash_Img" src={"/Images/logo_poubelle.png"} />
+            </button>
 
+          </div>
+          <p id="Plante_Prix_Panier">Sous-Total : {item.itemTotal}€</p>
+          
+          </> 
+          }
         </div>
-        <p id="Plante_Prix_Panier">Sous-Total : {item.itemTotal}€</p>
-        
-        </> 
-        }
+        <p id="Plante_Description">{plante.Description}</p>
       </div>
-      <p id="Plante_Description">{plante.Description}</p>
-    </div>
     </div>
   );
 }

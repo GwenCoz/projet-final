@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
-import './style.css';
+import './connexion.css';
 
 
 function Inscription() {

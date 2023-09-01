@@ -1,70 +1,98 @@
 import Image from 'react-bootstrap/Image';
 import Nav from 'react-bootstrap/Nav';
 import Dropdown from 'react-bootstrap/Dropdown';
+import { useEffect,useState } from 'react';
+import { Utilisateur } from './Utilisateur/utilisateur';
+import "./Header&Footer.css";
+import { useCart } from 'react-use-cart';
 
-
-
-
+function Deconnexion()
+{
+  sessionStorage.clear();
+  window.location.reload();
+}
 
 function Header(){
 
-        return (
-           <div>
-<div className="container-fluid">
+  const [utilisateur,setutilisateur] = useState<Utilisateur>(null)
 
-<nav className="navbar navbar-expand-sm justify-content-center bg-danger text-white">
-Mega soldes, une plante achetée, une deuxième vous est imposée!  
-</nav>
-</div>
+  if (utilisateur==null && sessionStorage.getItem("user"))
+  {
+    setutilisateur (JSON.parse (sessionStorage.getItem ("user")));
+  }
 
-<div>
-<div className="container-fluid">
-    <nav className="navbar navbar-expand-sm justify-content-end">
-    <Image src=""/>
+  const {
+    totalItems,
+  } = useCart();
+  
+  return (
+    <div>
+      <div>
+        
+        {utilisateur && 
+          <div id='BarBonjour'>
+            Bonjour {utilisateur.Prenom} {utilisateur.Nom}
+          </div>
+        }
+          
+        <nav id='BarUtilisateur'>
+          <Image id='Logo' src="./Images/logo.png" onClick={()=>window.location.href ="/"}/>
 
-        <ul className="navbar-nav ">
-
-        <li className="nav-item ">
-            <a className="nav-link" href="#">Connexion</a>
-        </li>
-        <li className="nav-item">
-            <a className="nav-link" href="#">Panier</a>
-        </li>
-
-        </ul>
-
-    </nav>
-</div>
-
-<div>
-<div className="container-fluid">
-    <nav className="navbar navbar-expand-sm bg-success navbar-dark justify-content-center">  
-       <Dropdown>
-       <Dropdown.Toggle variant="success" id="dropdown-basic">
-        Plantes d'intérieur
-       </Dropdown.Toggle>
-        <Dropdown.Menu>
-        <Dropdown.Item href="/nos_plantes">Par Taille</Dropdown.Item>
-        <Dropdown.Item href="/nos_plantes">Par Emplacement</Dropdown.Item>
-        <Dropdown.Item href="/nos_plantes">Par Beauté</Dropdown.Item>
-      </Dropdown.Menu>
-      </Dropdown> 
-
-      <Nav >
-        <Nav.Item>
-          <Nav.Link style={{color:"white"}}>Plantes d'extérieur</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link style={{color:"white"}}>A propos</Nav.Link>
-        </Nav.Item>
-      </Nav>
+          <ul id="BarUtilisateur_ListBouton">
+            <li className="List_Element">
+              <a className="List_link" href="/panier"> { (totalItems!=0) && <p id='pastille_panier'>{totalItems}</p>}<Image className='icone green medium' src="./Images/Logo_panier.png" /> <p className='List_nom green'>Panier</p></a>
+              
+            </li>
     
-    </nav>
+            {utilisateur &&
+              <>
+                <li className="List_Element">
+                  <a className="List_link" href="/profil"><p className='List_nom green'>Mon profil</p></a>
+                </li>
 
-</div>
-</div>
-</div>
-</div>      
+                <li className="List_Element">
+                  <a type="button" className="List_link" onClick={Deconnexion}><p className='List_nom green'>Deconnexion</p></a>
+                </li>
+              </>
+
+              ||
+
+              <li className='List_Element'>
+                <a className="List_link" href="/connexion"><p className='List_nom green'>Connexion</p></a>
+              </li>
+            }   
+
+          </ul>
+
+        </nav>
+        
+
+        
+        <div id='Barre_Navigation'>
+           
+            {/* <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              Plantes d'intérieur
+            </Dropdown.Toggle>
+              <Dropdown.Menu>
+              <Dropdown.Item href="/nos_plantes">Par Taille</Dropdown.Item>
+              <Dropdown.Item href="/nos_plantes">Par Emplacement</Dropdown.Item>
+              <Dropdown.Item href="/nos_plantes">Par Beauté</Dropdown.Item>
+            </Dropdown.Menu>
+            </Dropdown>  */}
+            
+            <a className="Link btn_div Gras" href='/'> <Image className='icone white small' src="./Images/Logo_home.png" /> <p className='Btn_text'>Home</p> </a>
+            
+
+            <div id='Plante_Section'>
+              <a  id="NosPlantes" href="/nos_plantes" ><p>Nos Plantes</p></a>
+              <a  href="/nos_plantes" ><p>Plantes d'intérieur</p></a>
+              <a  href="/nos_plantes" ><p>Plantes d'extérieur</p></a>
+            </div>
+            <a className="Link btn_div" href='#'> <p className='Btn_text'>A propos</p> </a>
+        </div>
+      </div>
+    </div>      
 );
 }
 

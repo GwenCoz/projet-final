@@ -1,12 +1,3 @@
-export function Maplante2 () {
-
-    const plante = fetch('http://localhost:52550/api/article/get/3').then((res) => res.json());
-
-
-
-return (plante)
-}
-
 export function ListePlante () {
 
 const plante = fetch('http://localhost:52550/api/article/get/').then((res) => res.json());
@@ -17,11 +8,18 @@ return (plante)
 }
 
 
-async function Maplante() {
+export function GetPlante(id) {
 
-const response = await fetch('http://localhost:52550/api/article/get/1').then((res) => res.json());
-// Renvoyez les données récupérées
+const response = fetch(`http://localhost:52550/api/article/get/${id}`).then((res) => res.json());
+
 return response;
 }
 
-export default Maplante;
+export function GetUtilisateur(email,mdp) {
+
+    const response = fetch(`http://localhost:52550/api/client/Getbymail?email=${email}&mdp=${mdp}`).then((res) => res.json());
+
+    
+    return response;
+    }
+

@@ -7,4 +7,6 @@ export class Plante {
     Famille: string;
     Lieu: string;
     imgpath: string;
+
+    
 }

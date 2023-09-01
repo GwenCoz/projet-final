@@ -17,7 +17,6 @@ const Affichage_produits = () => {
     
     useEffect(() => {
         ListePlante().then ((data) => {setPlantes (data)});
-        console.log ("chargement effectué");
 
 
     },[])

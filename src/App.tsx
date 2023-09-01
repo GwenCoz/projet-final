@@ -12,6 +12,7 @@ import Commander from './components/Achats_utilisateur/Commander';
 import Panier from './components/Achats_utilisateur/panier';
 import NoPage from './components/NoPage';
 import Home from './components/Home';
+import Inscription from './components/Inscription/Inscription';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
             <Route path="profil" element={<Profil/>} />
             <Route path="commande" element={<Commander/>} />
             <Route path="*" element={<NoPage/>} />
+            <Route path="inscription" element={<Inscription/>} />
 
 
 

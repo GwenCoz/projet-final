@@ -41,7 +41,7 @@ function Affichage_article() {
     plante && ptocarte &&
     
     
-    
+    <div id="Affichage">
     <div id="Plante_Affichage">
       <div id="Plante_Titre">
         <h1 id="Plante_Nom">{plante.Nom}</h1>
@@ -78,7 +78,7 @@ function Affichage_article() {
       </div>
       <p id="Plante_Description">{plante.Description}</p>
     </div>
-
+    </div>
   );
 }
 

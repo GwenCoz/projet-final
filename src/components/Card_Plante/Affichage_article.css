@@ -1,6 +1,8 @@
-#Plante_Affichage{
+#Affichage{
+    padding: 25px;
+}#Plante_Affichage{
     height: auto;
-    margin: 1em;
+    margin: auto;
     padding: 20px;
     display: grid;  
     grid-template-columns: 1fr 1fr;
@@ -121,6 +123,9 @@
 
 
 @media only screen and (max-width: 800px) {
+    #Affichage{
+        padding: 18x;
+    }
     #Plante_Titre{
         grid-row: 1;
         grid-column: 1/3;
@@ -139,6 +144,9 @@
     }
   }
 @media only screen and (max-width: 650px) {
+    #Affichage{
+        padding: 10px;
+    }
     #Plante_Affichage{
         grid-template-columns: 2fr 3fr;
     }#Plante_Description{

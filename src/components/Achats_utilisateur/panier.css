@@ -29,6 +29,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: min-content;
     background-color: rgba(250, 235, 215, 0.35);
+    border: rgba(250, 235, 215, 0.5) 1px solid;
     margin: 5px;
     padding: 5px;
     border-radius: 10px;

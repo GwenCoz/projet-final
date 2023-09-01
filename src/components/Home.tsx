@@ -1,4 +1,5 @@
-import CarouselDemo from "./HomeCarouselle";
+import "./Home.css";
+import CarouselDemo from "./HomeCarousel";
 
 function Home(){
 

@@ -73,6 +73,12 @@
     font-size: 1.1em;
     font-weight: 500;
     margin: 5px;
+}#no_stock{
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 10px;
+    padding:  5px 10px;
+    font-size: 1.5em;
+
 }#Plante_Panier p{
     margin: 5px 5px 5px 5px;
 }
@@ -151,6 +157,8 @@
         grid-template-columns: 2fr 3fr;
     }#Plante_Description{
         font-size: 1em;
+    }#no_stock{
+        font-size: 1.2em;
     }
   }@media only screen and (max-width: 450px) {
     #Plante_Affichage{

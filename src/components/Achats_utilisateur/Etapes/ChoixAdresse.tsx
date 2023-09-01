@@ -31,51 +31,39 @@ function ChoixAdresse() {
         </select>
   
         {choixadresse &&
-  
-          <form onSubmit={handleSubmit}>
-  
-            <div className="mb-2">
+          <form className="formulaire" onSubmit={handleSubmit}>
+            
               <label className="form-label">Nom</label>
               <input className="form-control" type="text" value={utilisateur.Nom} readOnly
               />
-            </div>
   
-            <div className="mb-3">
               <label className="form-label">Prenom</label>
               <input className="form-control" type="text" value={utilisateur.Prenom} readOnly />
-            </div>
   
-            <div className="mb-3">
               <label className="form-label">Rue</label>
               <input className="form-control" type="text" value={choixadresse.Rue || ""} required
                 onChange={e => setutilisateur({ ...utilisateur, "Rue": e.target.value })} />
-            </div>
   
   
-            <div className="mb-3">
               <label className="form-label">Complement d'adresse</label>
               <input className="form-control" type="text" value={choixadresse.Complement || ""}
                 onChange={e => setutilisateur({ ...utilisateur, "Complementaire": e.target.value })} />
-            </div>
   
-            <div className="mb-3">
               <label className="form-label">Ville</label>
               <input className="form-control" type="text" value={choixadresse.Ville || ""} required
                 onChange={e => setutilisateur({ ...utilisateur, "Ville": e.target.value })} />
-            </div>
   
-            <div className="mb-3">
+            
               <label className="form-label">Code postal</label>
               <input className="form-control" type="text" value={choixadresse.Code_Postal || ""} required
                 onChange={e => setutilisateur({ ...utilisateur, "Code_postal": e.target.value })} />
-            </div>
   
-            <div className="mb-3">
+
               <label className="form-label">Pays</label>
               <input className="form-control" type="text" value={choixadresse.Pays || ""} required
                 onChange={e => setutilisateur({ ...utilisateur, "Pays": e.target.value })} />
-            </div>
-            <input type="submit" />
+                
+            <input id="btn_submit" type="submit" />
           </form>
         }
   

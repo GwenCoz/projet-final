@@ -24,7 +24,7 @@ function ChoixAdresse() {
     return (
       utilisateur &&
       <>
-        <h6>Choisir l'adresse d'expédition</h6>
+        <h6 className="Fond">Choisir l'adresse d'expédition</h6>
         <select onChange={(e) => handleChange(e)} name="Choisissez votre adresse">
           <option></option>
           {utilisateur.adresse.map((adr, index) => <option key={adr.Id} value={index}>{adr.Nom_Adresse}</option>)}

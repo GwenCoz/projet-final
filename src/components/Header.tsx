@@ -104,8 +104,8 @@ function Header(){
 
             <div id='Plante_Section'>
               <a  id="NosPlantes" href="/nos_plantes" ><p>Nos Plantes</p></a>
-              <a  href="/nos_plantes" ><p>Plantes d'intérieur</p></a>
-              <a  href="/nos_plantes" ><p>Plantes d'extérieur</p></a>
+              <a  href="/nos_plantes_interieur" ><p>Plantes d'intérieur</p></a>
+              <a  href="/nos_plantes_exterieur" ><p>Plantes d'extérieur</p></a>
             </div>
             <a className="Link btn_div" href='#'> <p className='Btn_text'>A propos</p> </a>
         </div>

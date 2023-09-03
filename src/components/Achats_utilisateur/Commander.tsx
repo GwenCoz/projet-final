@@ -32,7 +32,7 @@ function Commander() {
             <StepContext.Provider value={{ etape, setetape }}>
               <PaymentContext.Provider value={{ paiement, setpaiement }}>
 
-                Votre commande : {utilisateur.Nom} {utilisateur.Prenom}<br />
+                <h3 className="Fond ">Votre commande : {utilisateur.Nom} {utilisateur.Prenom}</h3>
 
                 <div className="p-3 border-bottom d-flex justify-content-between">
                   <h5 className="font-weight-bold">1. Adresse de livraison</h5>
@@ -50,7 +50,7 @@ function Commander() {
                 {etape == 3 && <Recapitulatif />}
 
                 <div className="p-3 border-bottom d-flex justify-content-between">
-                  <h5 className="font-weight-bold">3. Récapitulatif et Livraison</h5>
+                  <h5 className="font-weight-bold">4. Validation</h5>
                 </div>
                 {etape == 4 && <Validation />}
 
@@ -65,7 +65,9 @@ function Commander() {
     );
 
   return (
-    <a href="/connexion">Veuillez vous identifier</a>
+    <div className="Fond">
+      <a id="Demande_Connexion"href="/connexion">Veuillez vous identifier</a>
+    </div>
   );
 
 

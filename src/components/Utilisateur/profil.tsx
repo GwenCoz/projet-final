@@ -11,10 +11,10 @@ const Profil = () =>
 
     return (
     utilisateur &&
-    <>
-    Profil de {utilisateur.Nom}
+    <div className="Fond">
+    <h3 className="green">Profil de {utilisateur.Prenom}</h3>
     
-    </>   
+    </div>   
     );
 
 

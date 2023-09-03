@@ -64,18 +64,20 @@ function Recapitulatif() {
     return (
 
         <>
-            Expédition à l'Adresse {choixadresse.Nom_Adresse} :
+            <h6 className="Fond" >Expédition à l'Adresse {choixadresse.Nom_Adresse} : </h6>
 
-            <ul>
-                <li >{choixadresse.Rue}</li>
-                <li>{choixadresse.Complement}</li>
-                <li>{choixadresse.Ville}</li>
-                <li>{choixadresse.Departement}</li>
-                <li>{choixadresse.Pays}</li>
-
-            </ul>
-
-            Choix de la livraison :
+            <table className="green" id="Recap_Adress">
+                <tr><td>Rue</td><td>{choixadresse.Rue}</td></tr>
+                {choixadresse.Complement != null &&
+                    <tr><td>Complément</td><td>{choixadresse.Complement}</td></tr>
+                }
+                <tr><td>Code Postal</td><td>{choixadresse.Code_Postal}</td></tr>
+                <tr><td>Ville</td><td>{choixadresse.Ville}</td></tr>
+                <tr><td>Pays</td><td>{choixadresse.Pays.toUpperCase()}</td></tr>
+            </table>
+            <hr style={{"width": "30%","margin" :" 10px auto"}}/>
+            <h6 className="Fond ">Choix de la livraison :</h6>
+            
 
             <form onSubmit={formSubmit}>
                 <div className="radio">
@@ -113,15 +115,14 @@ function Recapitulatif() {
                     </label>
                 </div>
 
-                <button className="btn btn-default" type="submit">
-                    Submit
+                <button id="btn_submit" type="submit">
+                    Valider
                 </button>
             </form>
-
+            <hr style={{"width": "30%","margin" :" 10px auto"}}/>
             {coutlivraison && choixlivraison &&
                 <>
-                    Votre commande :
-
+                    <h6 className="Fond "> Votre commande : </h6>
                     <ul>
                         {items.map((item) => (
                             <li key={item.id}>
@@ -130,18 +131,19 @@ function Recapitulatif() {
                             </li>
                         ))}
                     </ul>
-
-                    total hors taxe : {(cartTotal * .80).toFixed(2)} € <br />
-                    total TTC : {cartTotal} € <br />
-                    frais de livraison : {choixlivraison} : {coutlivraison}€ <br />
-                    A payer: {cartTotal + coutlivraison}<br />
-
-
-                    Choix du paiement : {paiement} <br />
-
-                    <button onClick={HandleSubmit}>Confirmer</button>
-
+                    <p style={{"textAlign":"left", "width": "275px", "margin": "auto"}}>
+                        Total hors taxe : {(cartTotal * .80).toFixed(2)} € <br />
+                        Total TTC : {cartTotal} € <br />
+                        <hr/>
+                        Frais de livraison : {choixlivraison} : {coutlivraison} € <br />
+                        <hr />
+                        A payer: {cartTotal + coutlivraison} €<br />
+                        Choix du paiement : {paiement} <br />
+                    </p>
+                    <button  id="btn_submit" onClick={HandleSubmit}>Confirmer</button>
                 </>
+                ||
+                <></>
             }
 
         </>

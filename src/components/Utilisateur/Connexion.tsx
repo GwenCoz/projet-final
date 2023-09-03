@@ -71,7 +71,7 @@ const Connexion = () =>
 
     return (
 
-    <div id="Div_Formulaire"> 
+    <div className="Fond"> 
       <h5 id="Titre"> Déjà Client? </h5>
 
       <form className="Formulaire-animation formulaire" style={{ animationPlayState:tremblement?"running":"paused"}} onSubmit={handleSubmit}>
@@ -101,7 +101,7 @@ const Connexion = () =>
 
     return (
 
-        <>Bonjour {utilisateur.Nom} {utilisateur.Prenom}</>
+        <div className="Fond">Bonjour {utilisateur.Nom} {utilisateur.Prenom}</div>
     );
 }
 

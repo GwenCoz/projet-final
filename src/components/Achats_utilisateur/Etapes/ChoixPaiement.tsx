@@ -27,7 +27,7 @@ function Paiement() {
             <label>
               <input
                 type="radio"
-                value="CB"
+                value="Carte Bancaire"
                 onChange={onValueChange}
                 name="paiement"
                 required

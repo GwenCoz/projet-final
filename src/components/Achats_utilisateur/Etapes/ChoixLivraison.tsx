@@ -25,7 +25,7 @@ function ChoixLivraison() {
         <>
             <h6 className="Fond" >Expédition à l'Adresse {choixadresse.Nom_Adresse} : </h6>
 
-            <table className="green" id="Recap_Adress">
+            <table className="green Table_Recap">
                 <tr><td>Rue</td><td>{choixadresse.Rue}</td></tr>
                 {choixadresse.Complement != null &&
                     <tr><td>Complément</td><td>{choixadresse.Complement}</td></tr>
@@ -34,10 +34,10 @@ function ChoixLivraison() {
                 <tr><td>Ville</td><td>{choixadresse.Ville}</td></tr>
                 <tr><td>Pays</td><td>{choixadresse.Pays.toUpperCase()}</td></tr>
             </table>
+
             <hr style={{ "width": "30%", "margin": " 10px auto" }} />
+
             <h6 className="Fond ">Choix de la livraison :</h6>
-
-
             <form onSubmit={formSubmit}>
                 <div className="radio">
                     <label>
@@ -70,7 +70,7 @@ function ChoixLivraison() {
                             onChange={(e) => setchoixlivraison(e.target.value)}
                             name="livraison"
                         />
-                        Relais colis 5€
+                        Livraison en relais colis : 5€
                     </label>
                 </div>
 

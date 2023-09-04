@@ -45,16 +45,7 @@ function Recapitulatif() {
 
 
         }
-
-
-
-
-
     
-
-    
-
-
 
     function HandleSubmit(event) {
         event.preventDefault();
@@ -86,87 +77,26 @@ function Recapitulatif() {
         majstatuspanier();
 
         setetape(5)
-        
-
-
-
-
-
     }
 
     return (
-
-        <>
-            <h6 className="Fond" >Expédition à l'Adresse {choixadresse.Nom_Adresse} : </h6>
-
-            <table className="green" id="Recap_Adress">
-                <tbody>
-                <tr><td>Rue</td><td>{choixadresse.Rue}</td></tr>
-                {choixadresse.Complement != null &&
-                    <tr><td>Complément</td><td>{choixadresse.Complement}</td></tr>
-                }
-                <tr><td>Code Postal</td><td>{choixadresse.Code_Postal}</td></tr>
-                <tr><td>Ville</td><td>{choixadresse.Ville}</td></tr>
-                <tr><td>Pays</td><td>{choixadresse.Pays.toUpperCase()}</td></tr>
-                </tbody>
-            </table>
-            <hr style={{"width": "30%","margin" :" 10px auto"}}/>
-            <h6 className="Fond ">Choix de la livraison :</h6>
-            
-
-            <form onSubmit={formSubmit}>
-                <div className="radio">
-                    <label>
-                        <input
-                            type="radio"
-                            value="Livraison économique"
-                            onChange={(e) => setchoixlivraison(e.target.value)}
-                            name="livraison"
-                            required
-                        />
-                        Livraison économique
-                    </label>
-                </div>
-                <div className="radio">
-                    <label>
-                        <input
-                            type="radio"
-                            value="Livraison prioritaire"
-                            onChange={(e) => setchoixlivraison(e.target.value)}
-                            name="livraison"
-                        />
-                        Livraison prioritaire
-                    </label>
-                </div>
-                <div className="radio">
-                    <label>
-                        <input
-                            type="radio"
-                            value="Relais colis"
-                            onChange={(e) => setchoixlivraison(e.target.value)}
-                            name="livraison"
-                        />
-                        Relais colis
-                    </label>
-                </div>
-
-                <button id="btn_submit" type="submit">
-                    Valider
-                </button>
-            </form>
-            <hr style={{"width": "30%","margin" :" 10px auto"}}/>
-            {coutlivraison && choixlivraison &&
+    <>
+            {
                 <>
-                    <h6 className="Fond "> Votre commande : </h6>
-                    <ul>
+                    <h6 className="Fond"> Votre commande : </h6>
+                    <table className="green Table_Recap" style={{"textAlign":"center"}}>
+                        <thead>
+                            <tr><th style={{"width":"100px"}}>Quantité</th><th style={{"width":"250px"}}>Plantes</th><th style={{"width":"100px"}}>Prix Unitaire</th><th style={{"width":"100px"}}>Sous Total</th></tr>
+                        </thead>
+                        <tbody>
                         {items.map((item) => (
-                            <li key={item.id}>
-                                {item.quantity} x {item.Nom} = {item.quantity * item.price} €
-
-                            </li>
+                            <tr><td>{item.quantity}</td> <td> {item.Nom} </td><td>{item.price} €</td><td>{item.quantity * item.price} €</td></tr>
                         ))}
-                    </ul>
+                        </tbody>
+                    </table>
+                    
                     <p style={{"textAlign":"left", "width": "275px", "margin": "auto"}}>
+                        <hr/>
                         Total hors taxe : {(cartTotal * .80).toFixed(2)} € <br />
                         Total TTC : {cartTotal} € <br />
                         <hr/>

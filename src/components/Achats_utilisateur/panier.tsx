@@ -17,22 +17,21 @@ export default Panier;
 function Cart() {
     const {
       isEmpty,
-      totalUniqueItems,
       items,
       updateItemQuantity,
       removeItem,
       emptyCart,
       cartTotal,
       totalItems,
-      metadata,
+      
 
     } = useCart();
   
     if (isEmpty) return <p className="Fond"> {metadata["logged"]} Votre panier est vide</p>;
+
   
     return (
       <>
-      {metadata["logged"]}
       <div id="Panier">
         <div id="Liste_Article">
           {items.map((item) => (

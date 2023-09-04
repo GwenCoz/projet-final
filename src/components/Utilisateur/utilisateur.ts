@@ -1,3 +1,5 @@
+import { Plante } from "../Card_Plante/Plante";
+
 export class Utilisateur {
     id: number;
     Nom: string;
@@ -10,6 +12,7 @@ export class Utilisateur {
     Rue: string;
     Complementaire: string;
     adresse: Adresse[];
+    commandes:Commande[];
     
 }
 
@@ -24,4 +27,19 @@ export class Adresse{
     Complement : string;
     Nom_Adresse : string;
     
+}
+
+export class Commande{
+    commandes_articles : Commandes_articles[];
+    id: number;
+    id_utilisateur: number;
+    date: string;
+    Status: string;
+}
+
+export class Commandes_articles{
+    id_commande: number;
+    id_article: number;
+    quantite: number;
+    articles: Plante;
 }

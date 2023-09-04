@@ -1,7 +1,7 @@
 export class Plante {
     id: number;
     Nom: string;
-    Prix: string;
+    Prix: number;
     Description: string;
     EnStock : number;
     Famille: string;

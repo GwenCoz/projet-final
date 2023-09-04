@@ -13,8 +13,7 @@ const Affichage_produits = (props) => {
 
     const [plantes, setPlantes] = useState<(Plante[])>([]);
 
-
-    
+   
     useEffect(() => {
         ListePlante().then ((data) => {setPlantes (data)});
 

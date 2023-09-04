@@ -5,8 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Affichage_produits from './components/Card_Plante/Affichage_produits';
 import Affichage_article from './components/Card_Plante/Affichage_article';
 
-import Connexion, { user } from './components/Utilisateur/Connexion';
-import { CartProvider, useCart } from 'react-use-cart';
+import Connexion from './components/Utilisateur/Connexion';
+import { CartProvider } from 'react-use-cart';
 import Profil from './components/Utilisateur/profil';
 import Commander from './components/Achats_utilisateur/Commander';
 import Panier from './components/Achats_utilisateur/panier';

@@ -37,8 +37,8 @@ const Profil = () =>
     const handleSubmitModif = (event) => {
         event.preventDefault();
     
-        const adresses = ({"Id_Client":adresse.Id_Client,"Code_Postal":adresse.Code_Postal,"Complement":adresse.Complement
-                            ,"Departement":adresse.Departement,"Pays":adresse.Pays,"Rue":adresse.Rue,"Ville":adresse.Ville })
+        const adresses = [{"Id_Client":adresse.Id_Client,"Code_Postal":adresse.Code_Postal,"Complement":adresse.Complement
+                            ,"Departement":adresse.Departement,"Pays":adresse.Pays,"Rue":adresse.Rue,"Ville":adresse.Ville, "Nom_Adresse":adresse.Nom_Adresse}]
         var client = {
             "adresse":adresses,
             "id": utilisateur.id,
@@ -62,8 +62,8 @@ const Profil = () =>
       const handleSubmitCreer = (event) => {
         event.preventDefault();
     
-        const adresses = ({"Code_Postal":adresse.Code_Postal,"Complement":adresse.Complement
-                            ,"Departement":adresse.Departement,"Pays":adresse.Pays,"Rue":adresse.Rue,"Ville":adresse.Ville })
+        const adresses = [{"Code_Postal":adresse.Code_Postal,"Complement":adresse.Complement
+                            ,"Departement":adresse.Departement,"Pays":adresse.Pays,"Rue":adresse.Rue,"Ville":adresse.Ville }];
         
         
         var client = {
@@ -72,7 +72,7 @@ const Profil = () =>
             "Nom": utilisateur.Nom,
             "Prenom": utilisateur.Prenom,
             "Mdp": utilisateur.Mdp,
-            "Email": utilisateur.id
+            "Email": utilisateur.Email
         }                   
         const test = fetch('http://localhost:52550/api/client/post',
 
@@ -106,7 +106,7 @@ const Profil = () =>
     <>  
         <div >
 
-          <form className="formulaire" onSubmit={handleSubmitCreer}>
+          <form className="formulaire" onSubmit={handleSubmitModif}>
             <label >Nom :</label>
             <input type="text"
               onChange={(e) => setadresse({ ...adresse, Nom_Adresse: e.target.value })}

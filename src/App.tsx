@@ -37,6 +37,7 @@ function App() {
             <Route path="page_article/:id" element={<Affichage_article/>} />
             <Route path="panier" element={<Panier/>} />
             <Route path="connexion" element={<Connexion/>} />
+            <Route path="inscription" element={<Inscription/>} />
             <Route path="profil" element={<Profil/>} />
             <Route path="commande" element={<Commander/>} />
             <Route path="*" element={<NoPage/>} />

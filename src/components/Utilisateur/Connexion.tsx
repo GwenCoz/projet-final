@@ -70,7 +70,7 @@ const Connexion = () =>
     if (utilisateur==null || utilisateur.id==0)
 
     return (
-
+    <>
     <div className="Fond"> 
       <h5 id="Titre"> Déjà Client? </h5>
 
@@ -89,13 +89,20 @@ const Connexion = () =>
           
         
 
-        <input id="btn_submit" type="submit"
-        />
+        <input id="btn_submit" type="submit"/>
       </form>
 
       {erreurconnexion && <h5>Erreur dans l'email ou le mot de passe, veuillez vérifier vos informations.</h5>}
 
-    </div>   
+    </div>
+    
+    <div className="Fond">
+      <h5 id="Titre"> Pas encore inscrit ? </h5>
+      <button id="btn_submit" onClick={()=>window.location.href ="inscription"}>S'inscrire</button>
+    </div>
+
+    </>
+    
     );
 
 

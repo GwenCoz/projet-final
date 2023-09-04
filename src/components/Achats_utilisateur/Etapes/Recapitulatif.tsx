@@ -28,7 +28,7 @@ function Recapitulatif() {
 
         const commandes = utilisateur.commandes
         .filter((commande) => commande.Status == "Panier")
-        .map((commande) => ({"id":commande.id,"Status": "Non Repris" }));
+        .map((commande) => ({"id":commande.id,"id_utilisateur":commande.id_utilisateur,"date":commande.date,"Status": "Non Repris" }));
 
         console.log (JSON.stringify (commandes));
 

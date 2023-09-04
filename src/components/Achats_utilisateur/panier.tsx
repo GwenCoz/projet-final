@@ -27,7 +27,7 @@ function Cart() {
 
     } = useCart();
   
-    if (isEmpty) return <p className="Fond"> {metadata["logged"]} Votre panier est vide</p>;
+    if (isEmpty) return <p className="Fond"> Votre panier est vide</p>;
 
   
     return (

@@ -87,44 +87,50 @@ const Connexion = () => {
 
     return (
 
+      <>
 
 
-      <div id="Div_Formulaire">
-        <h5 id="Titre"> Déjà Client? </h5>
 
-        <form className="Formulaire-animation" style={{ animationPlayState: tremblement ? "running" : "paused" }} onSubmit={handleSubmit}>
-          <label >Email :</label>
-          <input type="email"
-            onChange={(e) => setconnectinfo({ ...connectinfo, email: e.target.value })}
-            value={connectinfo.email}
-          />
+        <div id="Div_Formulaire">
+          <h5 id="Titre"> Déjà Client? </h5>
 
-          <label > Mot de passe : </label>
-          <input type="password"
-            onChange={(e) => setconnectinfo({ ...connectinfo, mdp: e.target.value })}
-            value={connectinfo.mdp}
-          />
+          <form className="Formulaire-animation" style={{ animationPlayState: tremblement ? "running" : "paused" }} onSubmit={handleSubmit}>
+            <label >Email :</label>
+            <input type="email"
+              onChange={(e) => setconnectinfo({ ...connectinfo, email: e.target.value })}
+              value={connectinfo.email} />
+            
 
-
-          <input id="btn_submit" type="submit"
-          />
-        </form>
-
-        {erreurconnexion && <h5>Erreur dans l'email ou le mot de passe, veuillez vérifier vos informations.</h5>}
+            <label > Mot de passe : </label>
+            <input type="password"
+              onChange={(e) => setconnectinfo({ ...connectinfo, mdp: e.target.value })}
+              value={connectinfo.mdp}
+            />
 
 
-    );
+            <input id="btn_submit" type="submit"
+            />
+          </form>
+
+          </div>
+
+          {erreurconnexion && <h5>Erreur dans l'email ou le mot de passe, veuillez vérifier vos informations.</h5>}
+
+        </>
 
 
-  return (
-
-    <>
-      Bonjour {utilisateur.Nom} {utilisateur.Prenom} <br /><br />
+        );
 
 
-    </>
-  );
+        return (
+
+        <>
+          Bonjour {utilisateur.Nom} {utilisateur.Prenom} <br /><br />
+
+
+        </>
+        );
 }
 
-export default Connexion;
+        export default Connexion;
 

@@ -32,11 +32,11 @@ const Profil = () =>
 
     return (
     utilisateur &&
-      
+    
+    <>
     <div className="Fond">
     <h3 className="green">Profil de {utilisateur.Prenom}</h3>
     
-    </div>   
 
     Vos adresses :
 
@@ -58,6 +58,8 @@ const Profil = () =>
     </ul>
 
     }
+
+    </div>
     
  
     </>

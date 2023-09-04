@@ -38,27 +38,31 @@ function Commander() {
 
                 <h3 className="Fond ">Votre commande : {utilisateur.Nom} {utilisateur.Prenom}</h3>
 
-                <div className="p-3 border-bottom d-flex justify-content-between">
+                <div className="m-2 p-3 border-top d-flex justify-content-between">
                   <h5 className="font-weight-bold">1. Adresse de livraison</h5>
+                  {etape>1 &&  etape != 5 && <><button className="btn_Modifier" onClick={()=> setetape(1)}>Modifier</button></>}
                 </div>
                 {etape == 1 && <ChoixAdresse />}
 
-                <div className="p-3 border-bottom d-flex justify-content-between">
+                <div className="m-2 p-3 border-top d-flex justify-content-between">
                   <h5 className="font-weight-bold">2. Moyen de paiement</h5>
+                  {etape>2 && etape != 5 && <><button className="btn_Modifier" onClick={()=> setetape(2)}>Modifier</button></>}
                 </div>
                 {etape == 2 && <Paiement />}
 
-                <div className="p-3 border-bottom d-flex justify-content-between">
+                <div className="m-2 p-3 border-top d-flex justify-content-between">
                   <h5 className="font-weight-bold">3. Livraison</h5>
+                  {etape>3 && etape != 5 && <><button className="btn_Modifier" onClick={()=> setetape(3)}>Modifier</button></>}
                 </div>
                 {etape == 3 && <ChoixLivraison />}
 
-                <div className="p-3 border-bottom d-flex justify-content-between">
+                <div className="m-2 p-3 border-top d-flex justify-content-between">
                   <h5 className="font-weight-bold">4. Récapitulatif</h5>
+                  {etape>4 && etape != 5 && <><button className="btn_Modifier" onClick={()=> setetape(4)}>Modifier</button></>}
                 </div>
                 {etape == 4 && <Recapitulatif />}
 
-                <div className="p-3 border-bottom d-flex justify-content-between">
+                <div className="m-2 p-3 border-top d-flex justify-content-between">
                   <h5 className="font-weight-bold">5. Validation</h5>
                 </div>
                 {etape == 5 && <Validation />}
@@ -86,7 +90,10 @@ function Commander() {
 function Validation (){
 
   return (
-    <>Validé!</>
+    <>
+    <h3 className="Fond green">Votre commande à été validée!</h3>
+    <button className="m-2" id="btn_submit"> Retour à l'accueil</button>
+    </>
   )
 }
 

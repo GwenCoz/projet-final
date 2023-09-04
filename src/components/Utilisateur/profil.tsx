@@ -34,6 +34,58 @@ const Profil = () =>
         return String (total);
     }
 
+    const handleSubmitModif = (event) => {
+        event.preventDefault();
+    
+        const adresses = ({"Id_Client":adresse.Id_Client,"Code_Postal":adresse.Code_Postal,"Complement":adresse.Complement
+                            ,"Departement":adresse.Departement,"Pays":adresse.Pays,"Rue":adresse.Rue,"Ville":adresse.Ville })
+        var client = {
+            "adresse":adresses,
+            "id": utilisateur.id,
+            "Nom": utilisateur.Nom,
+            "Prenom": utilisateur.Prenom,
+            "Mdp": utilisateur.Mdp,
+            "Email": utilisateur.id
+        }  
+        const test = fetch('http://localhost:52550/api/client/put',
+         
+
+        {
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(client)
+        })                    
+      }
+      const handleSubmitCreer = (event) => {
+        event.preventDefault();
+    
+        const adresses = ({"Code_Postal":adresse.Code_Postal,"Complement":adresse.Complement
+                            ,"Departement":adresse.Departement,"Pays":adresse.Pays,"Rue":adresse.Rue,"Ville":adresse.Ville })
+        
+        
+        var client = {
+            "adresse":adresses,
+            "id": utilisateur.id,
+            "Nom": utilisateur.Nom,
+            "Prenom": utilisateur.Prenom,
+            "Mdp": utilisateur.Mdp,
+            "Email": utilisateur.id
+        }                   
+        const test = fetch('http://localhost:52550/api/client/post',
+
+        {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(client)
+        })                    
+      }
+
     return (
     utilisateur &&
     
@@ -47,22 +99,57 @@ const Profil = () =>
         <option></option>
         {utilisateur.adresse.map((adresse, indexadress) => 
         <option key={adresse.Id} value={indexadress}>{adresse.Nom_Adresse}</option>)}
-        <option> Nouvelle Adresse</option>
+        <option key={-1} value={null}> Ajouter Adresse </option>
     </select>
 
     {adresse &&
-    
-    <>
-        <table className="green Table_Recap">
-            <tbody>
-            <tr><th>Rue</th><td>{adresse.Rue}</td></tr>
-            <tr><th>Complement</th><td>{adresse.Complement}</td></tr>
-            <tr><th>Code Postal</th><td>{adresse.Code_Postal}</td></tr>
-            <tr><th>Ville</th><td>{adresse.Ville}</td></tr>
-            <tr><th>Pays</th><td>{adresse.Pays.toUpperCase()}</td></tr>     
-            </tbody>
-        </table>
-        <button id="Edit_Adress" onClick={()=> window.location.href = "#" }>Modifier Adresse</button>
+    <>  
+        <div >
+
+          <form className="formulaire" onSubmit={handleSubmitCreer}>
+            <label >Nom :</label>
+            <input type="text"
+              onChange={(e) => setadresse({ ...adresse, Nom_Adresse: e.target.value })}
+              value={adresse.Nom_Adresse} />
+            
+            <label >Rue :</label>
+            <input type="text"
+              onChange={(e) => setadresse({ ...adresse, Rue: e.target.value })}
+              value={adresse.Rue} />
+            
+
+            <label > Complement : </label>
+            <input type="text"
+              onChange={(e) => setadresse({ ...adresse, Complement: e.target.value })}
+              value={adresse.Complement}
+            />
+
+            <label >Code Postal :</label>
+            <input type="text"
+              onChange={(e) => setadresse({ ...adresse, Code_Postal: e.target.value })}
+              value={adresse.Code_Postal} />
+
+            <label >Departement :</label>
+            <input type="text"
+              onChange={(e) => setadresse({ ...adresse, Departement: e.target.value })}
+              value={adresse.Departement} />
+
+            <label > Ville :</label>
+            <input type="text"
+              onChange={(e) => setadresse({ ...adresse, Ville: e.target.value })}
+              value={adresse.Ville} />
+            
+            <label > Pays :</label>
+            <input type="text"
+              onChange={(e) => setadresse({ ...adresse, Pays: e.target.value })}
+              value={adresse.Pays} />
+
+
+            <input id="btn_submit" type="submit" value={"Modifier Adresse"}/>
+            
+          </form>
+
+        </div>
     </>
     }
 

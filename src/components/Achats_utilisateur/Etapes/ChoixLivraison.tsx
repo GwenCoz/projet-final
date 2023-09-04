@@ -26,7 +26,7 @@ function ChoixLivraison() {
             <h6 className="Fond" >Expédition à l'Adresse {choixadresse.Nom_Adresse} : </h6>
 
             <table className="green Table_Recap">
-                <tr><td>Rue</td><td>{choixadresse.Rue}</td></tr>
+                <tr><td style={{"width":"150px"}}>Rue</td><td style={{"width":"200px"}}>{choixadresse.Rue}</td></tr>
                 {choixadresse.Complement != null &&
                     <tr><td>Complément</td><td>{choixadresse.Complement}</td></tr>
                 }

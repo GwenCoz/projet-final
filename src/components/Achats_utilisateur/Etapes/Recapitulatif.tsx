@@ -86,11 +86,11 @@ function Recapitulatif() {
                     <h6 className="Fond"> Votre commande : </h6>
                     <table className="green Table_Recap" style={{"textAlign":"center"}}>
                         <thead>
-                            <tr><th style={{"width":"100px"}}>Quantité</th><th style={{"width":"250px"}}>Plantes</th><th style={{"width":"100px"}}>Prix Unitaire</th><th style={{"width":"100px"}}>Sous Total</th></tr>
+                            <tr><th style={{"width":"100px"}}>Quantité</th><th style={{"width":"250px"}}>Plantes</th><th style={{"width":"100px"}}>P.U.</th><th style={{"width":"100px"}}>Sous Total</th></tr>
                         </thead>
                         <tbody>
                         {items.map((item) => (
-                            <tr><td>{item.quantity}</td> <td> {item.Nom} </td><td>{item.price} €</td><td>{item.quantity * item.price} €</td></tr>
+                            <tr><td>{item.quantity}</td> <td> {item.Nom} </td><td style={{"fontStyle":"italic"}}>{item.price} €</td><td style={{"fontWeight":"bold"}}>{item.quantity * item.price} €</td></tr>
                         ))}
                         </tbody>
                     </table>
@@ -104,6 +104,7 @@ function Recapitulatif() {
                         <hr />
                         A payer: {cartTotal + coutlivraison} €<br />
                         Choix du paiement : {paiement} <br />
+                        <hr />
                     </p>
                     <button  id="btn_submit" onClick={HandleSubmit}>Confirmer</button>
                 </>

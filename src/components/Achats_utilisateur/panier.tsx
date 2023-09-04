@@ -71,17 +71,10 @@ function Cart() {
           <div id="Prix_Panier">
             <p id="Total"> TOTAL :</p> <p id="Euro">{cartTotal} € </p>
           </div>
-          <div id="Quantité_Panier">
-            <p id="Nombre">{totalItems} articles </p>
-            
-            <button id="Btn_Vider_Panier"
-              onClick={() => emptyCart()}><p>Vider panier</p>
-            </button>
-          </div>
 
-          <div id="Valider_Panier">
-            <a href="/commande"><p>Valider Commande</p></a>
-          </div>
+          <button className="Btn_Panier vert" onClick={()=>"/commande"}><p className="antiqueWhite">Valider Commande</p></button>
+          <br/>
+          <button className="Btn_Panier rouge" onClick={() => emptyCart()}><p className="antiqueWhite"><img id="Article_Trash_Img" src={"/Images/logo_poubelle.png"} /> Vider panier <img id="Article_Trash_Img" src={"/Images/logo_poubelle.png"} /></p></button>
         </div>
       </div>
       </>

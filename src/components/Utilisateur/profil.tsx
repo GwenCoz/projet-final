@@ -37,17 +37,10 @@ const Profil = () =>
     const handleSubmitModif = (event) => {
         event.preventDefault();
     
-        const adresses = [{"Id_Client":adresse.Id_Client,"Code_Postal":adresse.Code_Postal,"Complement":adresse.Complement
-                            ,"Departement":adresse.Departement,"Pays":adresse.Pays,"Rue":adresse.Rue,"Ville":adresse.Ville, "Nom_Adresse":adresse.Nom_Adresse}]
-        var client = {
-            "adresse":adresses,
-            "id": utilisateur.id,
-            "Nom": utilisateur.Nom,
-            "Prenom": utilisateur.Prenom,
-            "Mdp": utilisateur.Mdp,
-            "Email": utilisateur.Email
-        }  
-        const test = fetch('http://localhost:52550/api/client/put',
+        const adresses = {"Id_Client":adresse.Id_Client,"Code_Postal":adresse.Code_Postal,"Complement":adresse.Complement
+                            ,"Departement":adresse.Departement,"Pays":adresse.Pays,"Rue":adresse.Rue,"Ville":adresse.Ville, "Nom_Adresse":adresse.Nom_Adresse}
+        
+        const test = fetch('http://localhost:52550/api/adresse/put/',
          
 
         {
@@ -56,25 +49,16 @@ const Profil = () =>
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(client)
+            body: JSON.stringify(adresses)
         })                    
       }
       const handleSubmitCreer = (event) => {
         event.preventDefault();
     
-        const adresses = [{"Code_Postal":adresse.Code_Postal,"Complement":adresse.Complement
-                            ,"Departement":adresse.Departement,"Pays":adresse.Pays,"Rue":adresse.Rue,"Ville":adresse.Ville, "Nom_Adresse":adresse.Nom_Adresse }];
-        
-        
-        var client = {
-            "adresse":adresses,
-            "id": utilisateur.id,
-            "Nom": utilisateur.Nom,
-            "Prenom": utilisateur.Prenom,
-            "Mdp": utilisateur.Mdp,
-            "Email": utilisateur.Email
-        }                   
-        const test = fetch('http://localhost:52550/api/client/post',
+        const adresses = {"Code_Postal":adresse.Code_Postal,"Complement":adresse.Complement
+                            ,"Departement":adresse.Departement,"Pays":adresse.Pays,"Rue":adresse.Rue,"Ville":adresse.Ville, "Nom_Adresse":adresse.Nom_Adresse };
+                         
+        const test = fetch('http://localhost:52550/api/adresse/post',
 
         {
             method: 'POST',
@@ -82,7 +66,7 @@ const Profil = () =>
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(client)
+            body: JSON.stringify(adresse)
         })                    
       }
 

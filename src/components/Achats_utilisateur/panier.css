@@ -152,15 +152,19 @@
     margin: 10px 0 15px 0;
 }
 
-#Btn_Vider_Panier{
-    background-color: #dc3545;
+.Btn_Panier{
     border-radius: 10px;
-    margin: auto;
+    margin: 10px auto;
     border: none;
+    width: 200px;
     padding: 5px 10px;
-}#Btn_Vider_Panier p{
-   color: antiquewhite;
-   font-size: 1.2em;
+}.Btn_Panier {
+   font-size: 0.6em;
+   font-weight: 500;
+}.vert{
+    background-color: darkgreen;
+}.rouge{
+    background-color: #dc3545;
 }
 #Valider_Panier{
     border-radius: 10px;

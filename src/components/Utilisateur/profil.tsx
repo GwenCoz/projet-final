@@ -45,7 +45,7 @@ const Profil = () =>
             "Nom": utilisateur.Nom,
             "Prenom": utilisateur.Prenom,
             "Mdp": utilisateur.Mdp,
-            "Email": utilisateur.id
+            "Email": utilisateur.Email
         }  
         const test = fetch('http://localhost:52550/api/client/put',
          
@@ -63,7 +63,7 @@ const Profil = () =>
         event.preventDefault();
     
         const adresses = [{"Code_Postal":adresse.Code_Postal,"Complement":adresse.Complement
-                            ,"Departement":adresse.Departement,"Pays":adresse.Pays,"Rue":adresse.Rue,"Ville":adresse.Ville }];
+                            ,"Departement":adresse.Departement,"Pays":adresse.Pays,"Rue":adresse.Rue,"Ville":adresse.Ville, "Nom_Adresse":adresse.Nom_Adresse }];
         
         
         var client = {

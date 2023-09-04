@@ -100,10 +100,10 @@ const Connexion = () => {
 
 
 
-        <div id="Div_Formulaire">
+        <div className="Fond">
           <h5 id="Titre"> Déjà Client? </h5>
 
-          <form className="Formulaire-animation" style={{ animationPlayState: tremblement ? "running" : "paused" }} onSubmit={handleSubmit}>
+          <form className="Formulaire-animation formulaire" style={{ animationPlayState: tremblement ? "running" : "paused" }} onSubmit={handleSubmit}>
             <label >Email :</label>
             <input type="email"
               onChange={(e) => setconnectinfo({ ...connectinfo, email: e.target.value })}
@@ -121,11 +121,16 @@ const Connexion = () => {
             />
           </form>
 
-          </div>
+        </div>
 
-          {erreurconnexion && <h5>Erreur dans l'email ou le mot de passe, veuillez vérifier vos informations.</h5>}
+        {erreurconnexion && <h5>Erreur dans l'email ou le mot de passe, veuillez vérifier vos informations.</h5>}
 
-        </>
+        <div className="Fond">
+          <h5 id="Titre"> Pas encore inscrit ? </h5>
+          <button id="btn_submit" onClick={() => window.location.href = "inscription"}> S'inscrire </button>
+        </div>
+
+      </>
 
 
         );

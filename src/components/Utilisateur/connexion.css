@@ -69,12 +69,22 @@ background-color: rgba(250, 235, 215, 0.25);
   text-underline-offset: 5px;
 }
 
-#Recap_Adress{
+.Table_Recap{
   margin: auto;
   text-align: left;
   margin: 15px auto;
-}#Recap_Adress td{
+  border: rgba(250, 235, 215, 0.5) 2px solid;
+}.Table_Recap td{
   border: rgba(250, 235, 215, 0.5) 1px solid;
   padding: 5px;
   width: 200px;
+}.Table_Recap thead{
+  border: rgba(250, 235, 215, 0.5) 2px solid;
+}.Table_Recap th{
+  border: rgba(250, 235, 215, 0.5) 1px solid;
+  padding: 5px;
+}.Table_Recap tfoot{
+  border: rgba(250, 235, 215, 0.5) 2px solid;
+  text-align: right;
+  font-weight: bold;
 }

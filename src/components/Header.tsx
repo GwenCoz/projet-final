@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Utilisateur } from './Utilisateur/utilisateur';
 import "./Header&Footer.css";
 import { useCart } from 'react-use-cart';
+import { useFetcher } from 'react-router-dom';
 
 
 
@@ -21,17 +22,23 @@ function Header() {
   const [utilisateur, setutilisateur] = useState<Utilisateur>(null)
 
 
-  if (utilisateur == null && sessionStorage.getItem("user")) {
-    setutilisateur(JSON.parse(sessionStorage.getItem("user")));
-    updateCartMetadata({ "logged": true })
-  }
+  useEffect (()=>
+  {
+    if (utilisateur == null && sessionStorage.getItem("user")) {
+      setutilisateur(JSON.parse(sessionStorage.getItem("user")));
+      updateCartMetadata({ "logged": true })
+    }
+  
+  
+  
+    if (!sessionStorage.getItem("user") && metadata["logged"]) {
+      emptyCart();
+      updateCartMetadata({ "logged": false })
+    }
 
 
+  },[])
 
-  if (!sessionStorage.getItem("user") && metadata["logged"]) {
-    emptyCart();
-    updateCartMetadata({ "logged": false })
-  }
 
 
 

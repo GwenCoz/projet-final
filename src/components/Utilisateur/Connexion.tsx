@@ -78,6 +78,15 @@ const Connexion = () => {
 
   }, [utilisateur]);
 
+  useEffect(() => {
+
+    if (sessionStorage.getItem("user") != undefined && IsPanier) {
+      window.location.replace("/");
+    }
+    
+  }, [IsPanier]
+  );
+
 
 
 

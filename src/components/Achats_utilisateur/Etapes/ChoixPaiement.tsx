@@ -22,12 +22,12 @@ function Paiement() {
   
     return (
       <>
-        <form onSubmit={formSubmit}>
+        <form id="form_input" onSubmit={formSubmit}>
           <div className="radio">
             <label>
               <input
                 type="radio"
-                value="CB"
+                value="Carte Bancaire"
                 onChange={onValueChange}
                 name="paiement"
                 required
@@ -57,12 +57,13 @@ function Paiement() {
               Virement
             </label>
           </div>
-          <button className="btn btn-default" type="submit">
+          <button id="btn_submit" type="submit">
             Submit
           </button>
         </form>
-  
       </>
+
+
   
     );
   }

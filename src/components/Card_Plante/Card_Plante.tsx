@@ -19,22 +19,21 @@ function Card_Plante(props) {
     const {inCart} = useCart();
     Presencepanier = inCart(ptocarte.id);
     
-
-
-    
-
-
     return (
 
             <div id="Card_Fond" >
-
+                { (p.EnStock == 0)&&
+                    <>
+                        <div id="pas_stock">Victime de son succes</div>
+                    </>
+                ||
                 <div id="Card_Btn">
-
+                    
                     <Bouton_Panier Presencepanier={Presencepanier} ptocarte={ptocarte}/>
                     
                     <p id="Card_Prix">{ptocarte.price} €</p>
                 </div>
-
+                }
 
                 <a href={`page_article/${p.id}`}>
                 <div id="Card_Image_Div">

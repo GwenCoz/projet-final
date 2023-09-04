@@ -12,23 +12,24 @@ pointer-events: auto;
 animation-play-state: paused;
 animation: Tremblement infinite 0.1s linear;
 }
+select{
+border-radius: 5px;
+border: darkgreen 1px solid;
+color: darkgreen;
+width: 150px;
+height: 2em;
+background-color: rgba(250, 235, 215, 0.25);
+}
 
-#Div_Formulaire{
-  background-color: rgba(250, 235, 215, 0.35);
-  border: rgba(250, 235, 215, 0.5) 2px solid;
-  margin: 10px auto;
-  padding: 10px;
-  border-radius: 10px;
-  width: fit-content;
-}#Titre{
+#Titre{
   font-size: 1.5em;
   color: darkgreen;
   margin-bottom: 10px;
-}form{
+}.formulaire{
   display: grid;
-  grid-template-columns: 150px 200px;
+  grid-template-columns: 200px 250px;
   gap: 5px;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   margin: 0.5em;
 }form label{
@@ -47,3 +48,33 @@ animation: Tremblement infinite 0.1s linear;
   padding: 5px;
 }
 
+.radio{
+  margin: auto;
+  width: 250px;
+  text-align: left;
+}.radio input{
+  margin: 10px 10px 10px 60px;
+}
+
+.Fond{
+  background-color: rgba(250, 235, 215, 0.25);
+  border: rgba(250, 235, 215, 0.5) 2px solid;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px auto;
+  width: fit-content;
+}#Demande_Connexion{
+  color: darkgreen;
+  font-size: 1.5em;
+  text-underline-offset: 5px;
+}
+
+#Recap_Adress{
+  margin: auto;
+  text-align: left;
+  margin: 15px auto;
+}#Recap_Adress td{
+  border: rgba(250, 235, 215, 0.5) 1px solid;
+  padding: 5px;
+  width: 200px;
+}

@@ -88,6 +88,7 @@ const Connexion = () => {
     return (
 
 
+
       <div id="Div_Formulaire">
         <h5 id="Titre"> Déjà Client? </h5>
 
@@ -105,14 +106,13 @@ const Connexion = () => {
           />
 
 
-
           <input id="btn_submit" type="submit"
           />
         </form>
 
         {erreurconnexion && <h5>Erreur dans l'email ou le mot de passe, veuillez vérifier vos informations.</h5>}
 
-      </div>
+
     );
 
 

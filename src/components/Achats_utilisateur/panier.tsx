@@ -27,7 +27,8 @@ function Cart() {
 
     } = useCart();
   
-    if (isEmpty) return <p>Votre panier est vide</p>;
+    if (isEmpty) return <p className="Fond"> {metadata["logged"]} Votre panier est vide</p>;
+
   
     return (
       <>
@@ -39,7 +40,7 @@ function Cart() {
             <div id="Article" key={item.id}>
               <div id="Article_Panier">
                 <div id="Article_Image_Div">
-                  <img id="Article_Image" src={item.imgpath} />
+                  <img id="Article_Image" src={item.imgpath} onClick={()=>window.location.href =`page_article/${item.id}`}/>
                 </div>
                 <a id="Article_Lien" href={`page_article/${item.id}`}><h3 id="Article_Nom">{item.Nom}</h3></a>
                 <p id="Article_Prix_Unitaire">{item.price}€ / Unité</p>

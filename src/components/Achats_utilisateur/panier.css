@@ -44,8 +44,11 @@
     overflow: hidden;
     border-radius:10px;
     position: relative;
+    
+    cursor: pointer;
 }#Article_Lien{
-    text-decoration: none;
+    text-decoration: underline solid darkgreen 2px;
+    text-underline-offset: 2px;
 }#Article_Image{
     object-fit: cover;
     width: 100%;
@@ -141,7 +144,7 @@
     width: fit-content;
 }#Option_Panier #Total{
     text-decoration: underline solid darkgreen 2px;
-    text-underline-position: under;
+    text-underline-offset: 5px;
 }
 #Option_Panier #Nombre{
     font-size: 1.5em;

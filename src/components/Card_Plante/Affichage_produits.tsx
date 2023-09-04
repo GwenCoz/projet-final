@@ -8,7 +8,7 @@ import "./Card_Plante.css"
 
 
 
-const Affichage_produits = () => {
+const Affichage_produits = (props) => {
 
 
     const [plantes, setPlantes] = useState<(Plante[])>([]);
@@ -23,10 +23,21 @@ const Affichage_produits = () => {
     return (
         <>
            <div id='Card_Container'>
-                               { plantes && plantes.length > 0 && plantes.map(plante => (
-
-                    <Card_Plante key={plante.id} plant={plante}/>
-                    
+                { plantes && plantes.length > 0 && plantes.map(plante => (
+                    <>
+                    { props.lieu &&
+                        <>
+                            { props.lieu==plante.Lieu && 
+                                <Card_Plante key={plante.id} plant={plante}/>
+                            }
+                            
+                        </>
+                        ||
+                        <>
+                            <Card_Plante key={plante.id} plant={plante}/>
+                        </>
+                    }
+                    </>
                 ))} 
 
 

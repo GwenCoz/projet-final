@@ -32,9 +32,12 @@ const Profil = () =>
 
     return (
     utilisateur &&
+      
+    <div className="Fond">
+    <h3 className="green">Profil de {utilisateur.Prenom}</h3>
+    
+    </div>   
 
-    <>
-    Profil de {utilisateur.Nom}
     Vos adresses :
 
         <h6>Choisir la commande</h6>

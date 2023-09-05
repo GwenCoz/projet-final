@@ -44,7 +44,7 @@ function Header() {
   function Deconnexion() {
     sessionStorage.clear();
     emptyCart();
-    window.location.reload();
+    window.location.href="/";
 
     if (totalItems && totalItems > 0) {
       SavePanier()

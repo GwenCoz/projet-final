@@ -72,18 +72,18 @@ const Connexion = () => {
       verifpanier();
     }
 
-    // if (sessionStorage.getItem("user") != undefined && IsPanier) {
-    //   window.location.replace("/");
-    // }
+    if (sessionStorage.getItem("user") != undefined && IsPanier) {
+      window.location.replace("/");
+    }
 
 
   }, [utilisateur]);
 
   useEffect(() => {
 
-    // if (sessionStorage.getItem("user") != undefined && IsPanier) {
-    //   window.location.replace("/");
-    // }
+    if (sessionStorage.getItem("user") != undefined && IsPanier) {
+      window.location.replace("/");
+    }
     
   }, [IsPanier]
   );

@@ -3,7 +3,7 @@ import React from 'react';
 
 function Body(){
     return (
-        <div style={{"display":"flex", "flexWrap": "nowrap", "justifyContent": "space-evenly", "alignContent": "stretch", margin:"10px 0"}}>
+        <div style={{"display":"flex", "flexWrap": "nowrap", "justifyContent": "center", "alignContent": "stretch", margin:"10px 0"}}>
         <div  style={{margin:"0 40px",width:"400px",height:"400px",position: "relative", display:"flex", "justifyContent":"center"}}>
     
             <div style={{position: "relative", overflow: "hidden", borderRadius:"10px"}}>
@@ -21,17 +21,6 @@ function Body(){
             <p style={{padding:" 5px 3px",borderRadius:"10px",backgroundColor:"#ffffffb0" ,position:"absolute",bottom:"60px",width:"90%",fontSize:"1.02em"}}> Découvrez notre selection de <strong> Plantes Extérieures</strong> pour embellir votre jardin et en faire un cadre agréable pour profiter de l'été. </p>
             <button id="btn_submit" style={{position:"absolute",bottom:"20px"}}> Plantes d'interieur</button> 
         </div>
-
-       
-        
-
-        
-
-
-       
-        
-      
-        
         </div>   
       
     );

@@ -69,8 +69,8 @@
 
     margin: 10px;
     border-radius: 10px;
-    width: 36px;
-    height: 36px;
+    width: 46px;
+    height: 46px;
 
 }
 #Card_Prix{
@@ -83,15 +83,15 @@
     margin-left: 10px;
 
     visibility: hidden;
-    padding-top: 5px;
+    padding-top: 8px;
     position: absolute;
     left: 30px;
-    width: 45px;
-    padding-right: 5px;
+    width: 65px;
+    padding-right: 10px;
     height: auto;
     font-weight: 600;
     text-align: right;
-    font-size: medium;   
+    font-size: 1.2em;   
 
 }
 #Card_Panier{
@@ -99,35 +99,37 @@
     justify-content: left;
     background: none;
     border-radius: 10px;
-    height: 36px;
+    height: 46px;
     border: 0px;
 }
 #Card_Panier_Img{
     transition-duration: 0;
     transition-delay: 0;
 
-    height: 20px;
+    height: 30px;
     filter: brightness(0) saturate(100%) invert(17%) sepia(91%) saturate(2844%) hue-rotate(102deg) brightness(92%) contrast(104%);
 }#Card_Panier_Plus{
     position: absolute;
     border-radius: 10px 0 0 0;
-    height: 18px;
-    width: 16px;
+    height: 23px;
+    width: 21px;
     border: 0px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    font-weight: 600;
     background: none;
+    font-weight: 600;
+    font-size: 1.2em; 
 }#Card_Panier_Moins{
     position: absolute;
-    top: 18px;
+    top: 23px;
     border-radius: 0 0 0 10px ;
-    height: 18px;
-    width: 16px;
+    height: 23px;
+    width: 21px;
     border: 0px;
-    font-weight: 600;
     background: none;
+    font-size: 1.2em; 
+    font-weight: 600;
     
     display: flex;
     justify-content: space-evenly;
@@ -138,12 +140,13 @@
     position: absolute;
     border-radius: 0 10px 10px 0;
     width: 20px;
-    height: 36px;
-    left: 15px;
+    height: 46px;
+    left: 23px;
     text-align: center;
-    line-height: 35px;
+    line-height: 45px;
     border-right: 12px;
     border-color: black;
+    font-size: 1.2em; 
     font-weight: 600;
     
 }
@@ -171,7 +174,7 @@
         color: aliceblue;
         background-color: rgba(0, 100, 0, 0.75);
     }#Card_Btn{
-        width: 85px;
+        width: 100px;
         background-color: rgba(0, 100, 0, 0.75);
     }#Card_Panier{
         background: none;
@@ -226,12 +229,3 @@
     color:black;
  
   }
-
-  
-#titre_home{
-    width: 50%;
-    position: absolute;
-    margin:auto;
-    color:red;
-
-}

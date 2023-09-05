@@ -208,3 +208,30 @@
         width: 95%;
     }
   }
+
+  .ImageBody {
+    width: 40%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    border-radius: 10px;
+    margin: auto;
+    padding: 5px;
+    position: relative;
+    block-size: 400px;
+    background-color: antiquewhite;
+    color:black;
+ 
+  }
+
+  
+#titre_home{
+    width: 50%;
+    position: absolute;
+    margin:auto;
+    color:red;
+
+}

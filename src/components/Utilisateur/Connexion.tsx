@@ -46,8 +46,9 @@ const Connexion = () => {
   async function Recuperationutilisateur() {
 
     GetUtilisateur(connectinfo.email, connectinfo.mdp).then(setutilisateur)
-
-    if (utilisateur == null || utilisateur.id == 0) {
+    console.log(utilisateur)
+    console.log(erreurconnexion)
+    if (utilisateur && utilisateur.id == 0) {
 
       seterreurconnexion(true);
       setcouleurtexte("red");
@@ -71,18 +72,18 @@ const Connexion = () => {
       verifpanier();
     }
 
-    if (sessionStorage.getItem("user") != undefined && IsPanier) {
-      window.location.replace("/");
-    }
+    // if (sessionStorage.getItem("user") != undefined && IsPanier) {
+    //   window.location.replace("/");
+    // }
 
 
   }, [utilisateur]);
 
   useEffect(() => {
 
-    if (sessionStorage.getItem("user") != undefined && IsPanier) {
-      window.location.replace("/");
-    }
+    // if (sessionStorage.getItem("user") != undefined && IsPanier) {
+    //   window.location.replace("/");
+    // }
     
   }, [IsPanier]
   );
@@ -133,17 +134,17 @@ const Connexion = () => {
       </>
 
 
-        );
+      );
 
 
-        return (
+      return (
 
-        <>
-          Bonjour {utilisateur.Nom} {utilisateur.Prenom} <br /><br />
+      <>
+        Bonjour {utilisateur.Nom} {utilisateur.Prenom} <br /><br />
 
 
-        </>
-        );
+      </>
+      );
 }
 
         export default Connexion;

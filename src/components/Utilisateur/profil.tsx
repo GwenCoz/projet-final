@@ -48,29 +48,30 @@ const Profil = () =>
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(adresse);
-        if(newAdress){
-          const test = fetch('http://localhost:52550/api/adresse/post/',
-          {
-              method: 'POST',
-              headers: {
-                  'Accept': 'application/json',
-                  'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(adresse)
-          })
-        }else{
-          const test = fetch('http://localhost:52550/api/adresse/put/',
-          {
-              method: 'PUT',
-              headers: {
-                  'Accept': 'application/json',
-                  'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(adresse)
-          })
-        }   
-        window.location.reload();               
+        if (adresse.Rue!=null && adresse.Code_Postal!=null && adresse.Nom_Adresse!=null && adresse.Ville!=null && adresse.Pays!=null ) {
+          if(newAdress){
+            const test = fetch('http://localhost:52550/api/adresse/post/',
+            {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(adresse)
+            })
+          }else{
+            const test = fetch('http://localhost:52550/api/adresse/put/',
+            {
+                method: 'PUT',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(adresse)
+            })
+          }   
+          window.location.reload();
+        }               
       }
 
     return (
@@ -97,12 +98,13 @@ const Profil = () =>
             <label >Nom :</label>
             <input type="text"
               onChange={(e) => setadresse({ ...adresse, Nom_Adresse: e.target.value })}
-              value={adresse.Nom_Adresse} />
+              value={adresse.Nom_Adresse} 
+              required/>
             
             <label >Rue :</label>
             <input type="text"
               onChange={(e) => setadresse({ ...adresse, Rue: e.target.value })}
-              value={adresse.Rue} />
+              value={adresse.Rue} required/>
             
 
             <label > Complement : </label>
@@ -114,7 +116,7 @@ const Profil = () =>
             <label >Code Postal :</label>
             <input type="text"
               onChange={(e) => setadresse({ ...adresse, Code_Postal: e.target.value })}
-              value={adresse.Code_Postal} />
+              value={adresse.Code_Postal} required />
 
             <label >Departement :</label>
             <input type="text"
@@ -124,12 +126,12 @@ const Profil = () =>
             <label > Ville :</label>
             <input type="text"
               onChange={(e) => setadresse({ ...adresse, Ville: e.target.value })}
-              value={adresse.Ville} />
+              value={adresse.Ville} required/>
             
             <label > Pays :</label>
             <input type="text"
               onChange={(e) => setadresse({ ...adresse, Pays: e.target.value })}
-              value={adresse.Pays} />
+              value={adresse.Pays} required/>
 
 
             <input id="btn_submit" type="submit" value={"Modifier Adresse"}/>
@@ -145,8 +147,13 @@ const Profil = () =>
     <h5>Selectionner une commande</h5>
     <select style={{"width":"200px", "textAlign": "center"}} onChange={(e) => handleChange(e)} name="Choisissez votre commande">
         <option></option>
-        {utilisateur.commandes.map((commande, index) => 
-        <option key={commande.id} value={index}>{todate(commande.date)}</option>)}
+        {utilisateur.commandes.map((commande, index) =>
+          <>
+          {(commande.Status=="Commandé" ) &&
+            <option key={commande.id} value={index}>{todate(commande.date)}</option>
+          }
+          </>
+          )}
     </select> 
     
 
@@ -154,7 +161,6 @@ const Profil = () =>
     
     <>
         <p className="m-3" style={{"textAlign":"left"}}> Date de commande {todate(commande.date)}</p>
-        <p className="m-3" style={{"textAlign":"left"}}> Status de la commande : {commande.Status}</p>
         <table className="green Table_Recap">
             <thead>
                 <tr><th style={{"width":"250px"}}>Plantes</th><th style={{"width":"100px"}}>Prix Unitaire</th><th style={{"width":"100px"}}>Quantité</th></tr>

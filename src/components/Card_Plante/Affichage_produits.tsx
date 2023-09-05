@@ -25,17 +25,23 @@ const Affichage_produits = (props) => {
            <div id='Card_Container'>
                 { plantes && plantes.length > 0 && plantes.map(plante => (
                     <>
-                    { props.lieu &&
+                    {plante.EnStock !=-1 &&
                         <>
-                            { props.lieu==plante.Lieu && 
+                        { props.lieu &&
+                            <>
+                                { props.lieu==plante.Lieu && 
+                                    <Card_Plante key={plante.id} plant={plante}/>
+                                }
+                                
+                            </>
+                            ||
+                            <>
                                 <Card_Plante key={plante.id} plant={plante}/>
-                            }
-                            
+                            </>
+                        }
                         </>
                         ||
-                        <>
-                            <Card_Plante key={plante.id} plant={plante}/>
-                        </>
+                        <></>
                     }
                     </>
                 ))} 

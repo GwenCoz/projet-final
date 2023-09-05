@@ -26,6 +26,7 @@ function ChoixLivraison() {
             <h6 className="Fond" >Expédition à l'Adresse {choixadresse.Nom_Adresse} : </h6>
 
             <table className="green Table_Recap">
+            <tbody>
                 <tr><td style={{"width":"150px"}}>Rue</td><td style={{"width":"200px"}}>{choixadresse.Rue}</td></tr>
                 {choixadresse.Complement != null &&
                     <tr><td>Complément</td><td>{choixadresse.Complement}</td></tr>
@@ -33,6 +34,7 @@ function ChoixLivraison() {
                 <tr><td>Code Postal</td><td>{choixadresse.Code_Postal}</td></tr>
                 <tr><td>Ville</td><td>{choixadresse.Ville}</td></tr>
                 <tr><td>Pays</td><td>{choixadresse.Pays.toUpperCase()}</td></tr>
+            </tbody>
             </table>
 
             <hr style={{ "width": "30%", "margin": " 10px auto" }} />

@@ -6,11 +6,7 @@ export class Utilisateur {
     Prenom: string;
     Mdp: string;
     Email : string;
-    Pays: string;
-    Code_postal: number;
-    Ville: string;
-    Rue: string;
-    Complementaire: string;
+    Telephone :string;
     adresse: Adresse[];
     commandes:Commande[];
     

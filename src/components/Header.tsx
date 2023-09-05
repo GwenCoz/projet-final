@@ -6,7 +6,6 @@ import { useCart } from 'react-use-cart';
 import { useFetcher } from 'react-router-dom';
 
 
-
 function Header() {
 
   const {
@@ -89,11 +88,11 @@ function Header() {
             <p id='Bonjour'>Bonjour {utilisateur.Prenom} ! </p>
 
           }
-          <Image id='Logo' src="./Images/logo.png" onClick={() => window.location.href = "/"} />
+          <Image id='Logo' src="/Images/logo.png" onClick={() => window.location.href = "/"} />
 
           <ul id="BarUtilisateur_ListBouton">
             <li className="List_Element">
-              <a className="List_link" href="/panier"> {(totalItems != 0) && <p id='pastille_panier'>{totalItems}</p>}<Image className='icone green medium' src="./Images/Logo_panier.png" /> <p className='List_nom green'>Panier</p></a>
+              <a className="List_link" href="/panier"> {(totalItems != 0) && <p id='pastille_panier'>{totalItems}</p>}<Image className='icone green medium' src="/Images/Logo_panier.png" /> <p className='List_nom green'>Panier</p></a>
 
             </li>
 
@@ -123,7 +122,7 @@ function Header() {
 
         <div id='Barre_Navigation'>
            
-            <a className="Link btn_div Gras" href='/'> <Image className='icone white small' src="./Images/Logo_home.png" /> <p className='Btn_text'>Accueil</p> </a>
+            <a className="Link btn_div Gras" href='/'> <Image className='icone white small' src="/Images/Logo_home.png" /> <p className='Btn_text'>Accueil</p> </a>
             
 
             <div id='Plante_Section'>

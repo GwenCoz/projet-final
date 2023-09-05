@@ -1,5 +1,6 @@
 import { useEffect,useState } from "react";
 import { Adresse, Commande, Utilisateur } from "./utilisateur";
+import { GetUtilisateur } from "../Api_objects";
 
 
 const Profil = () =>
@@ -8,14 +9,25 @@ const Profil = () =>
     const [utilisateur,setutilisateur]= useState<Utilisateur>(JSON.parse (sessionStorage.getItem("user")));
     const [commande,setcommande] = useState <Commande>(null)
     const [adresse,setadresse] = useState <Adresse>(null)
+    const [newAdress, setnewAdress] = useState <boolean>(false)
 
-    const handleChange = (e) => {
-        setcommande((utilisateur.commandes[e.target.value]))
-    
+    useEffect(() => {GetUtilisateur(utilisateur.Email, utilisateur.Mdp).then(setutilisateur)})
+
+      const handleChange = (e) => {
+          setcommande((utilisateur.commandes[e.target.value]))
+      
       }
-      const handleChangeAdresse = (e) => {
-        setadresse((utilisateur.adresse[e.target.value]))
     
+      const handleChangeAdresse = (e) => {
+        if (e.target.value ==-1){
+          setnewAdress(true);
+          const adresse2 = new Adresse();
+          adresse2.Id_Client=utilisateur.id;
+          setadresse(adresse2);
+        }else{
+          setnewAdress(false);
+          setadresse((utilisateur.adresse[e.target.value]))
+        }
       }
     const todate = (datestring)=>
     {
@@ -34,40 +46,31 @@ const Profil = () =>
         return String (total);
     }
 
-    const handleSubmitModif = (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
-    
-        const adresses = {"Id_Client":adresse.Id_Client,"Code_Postal":adresse.Code_Postal,"Complement":adresse.Complement
-                            ,"Departement":adresse.Departement,"Pays":adresse.Pays,"Rue":adresse.Rue,"Ville":adresse.Ville, "Nom_Adresse":adresse.Nom_Adresse}
-        
-        const test = fetch('http://localhost:52550/api/adresse/put/',
-         
-
-        {
-            method: 'PUT',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(adresses)
-        })                    
-      }
-      const handleSubmitCreer = (event) => {
-        event.preventDefault();
-    
-        const adresses = {"Code_Postal":adresse.Code_Postal,"Complement":adresse.Complement
-                            ,"Departement":adresse.Departement,"Pays":adresse.Pays,"Rue":adresse.Rue,"Ville":adresse.Ville, "Nom_Adresse":adresse.Nom_Adresse };
-                         
-        const test = fetch('http://localhost:52550/api/adresse/post',
-
-        {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(adresse)
-        })                    
+        console.log(adresse);
+        if(newAdress){
+          const test = fetch('http://localhost:52550/api/adresse/post/',
+          {
+              method: 'POST',
+              headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(adresse)
+          })
+        }else{
+          const test = fetch('http://localhost:52550/api/adresse/put/',
+          {
+              method: 'PUT',
+              headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(adresse)
+          })
+        }   
+        window.location.reload();               
       }
 
     return (
@@ -83,14 +86,14 @@ const Profil = () =>
         <option></option>
         {utilisateur.adresse.map((adresse, indexadress) => 
         <option key={adresse.Id} value={indexadress}>{adresse.Nom_Adresse}</option>)}
-        <option key={-1} value={null}> Ajouter Adresse </option>
+        <option key={-1} value={-1}> Ajouter Adresse </option>
     </select>
 
-    {adresse &&
+    {(adresse || newAdress)&&
     <>  
         <div >
 
-          <form className="formulaire" onSubmit={handleSubmitModif}>
+          <form className="formulaire" onSubmit={handleSubmit}>
             <label >Nom :</label>
             <input type="text"
               onChange={(e) => setadresse({ ...adresse, Nom_Adresse: e.target.value })}

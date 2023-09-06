@@ -12,39 +12,43 @@ import Commander from './components/Achats_utilisateur/Commander';
 import Panier from './components/Achats_utilisateur/panier';
 import NoPage from './components/NoPage';
 import Home from './components/Home';
-
+import Inscription from './components/Utilisateur/Inscription';
 
 function App() {
 
   return (
 
     <CartProvider>
-    <div className="App">
 
-      <BrowserRouter>
 
-        <Header/>
+      <div className="App">
+
+        <BrowserRouter>
+
+          <Header />
 
           <Routes>
 
             <Route path="/" element={<Home/>} />
             <Route path="nos_plantes" element={<Affichage_produits/>} />
+            <Route path="nos_plantes_interieur" element={<Affichage_produits lieu="Interieur"/>} />
+            <Route path="nos_plantes_exterieur" element={<Affichage_produits lieu="Exterieur"/>} />
+            <Route path="nos_plantes" element={<Affichage_produits/>} />
             <Route path="page_article/:id" element={<Affichage_article/>} />
             <Route path="panier" element={<Panier/>} />
             <Route path="connexion" element={<Connexion/>} />
+            <Route path="inscription" element={<Inscription/>} />
             <Route path="profil" element={<Profil/>} />
             <Route path="commande" element={<Commander/>} />
             <Route path="*" element={<NoPage/>} />
-
-
-
+            <Route path="inscription" element={<Inscription/>} />
 
           </Routes>
 
-        <Footer/>
+          <Footer />
 
-      </BrowserRouter>
-    </div>
+        </BrowserRouter>
+      </div>
     </CartProvider>
   );
 }

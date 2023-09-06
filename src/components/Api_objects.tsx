@@ -22,4 +22,3 @@ export function GetUtilisateur(email,mdp) {
     
     return response;
     }
-

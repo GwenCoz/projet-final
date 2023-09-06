@@ -17,22 +17,22 @@ export default Panier;
 function Cart() {
     const {
       isEmpty,
-      totalUniqueItems,
       items,
       updateItemQuantity,
       removeItem,
       emptyCart,
       cartTotal,
       totalItems,
+      
 
     } = useCart();
   
-    if (isEmpty) return <p>Votre panier est vide</p>;
+    if (isEmpty) return <p className="Fond"> Votre panier est vide</p>;
+
   
     return (
       <>
       <div id="Panier">
-        <h1 id="Panier_Contenu">Votre Panier contient {totalUniqueItems} plantes différentes </h1>
         <div id="Liste_Article">
           {items.map((item) => (
 
@@ -40,7 +40,7 @@ function Cart() {
             <div id="Article" key={item.id}>
               <div id="Article_Panier">
                 <div id="Article_Image_Div">
-                  <img id="Article_Image" src={item.imgpath} />
+                  <img id="Article_Image" src={item.imgpath} onClick={()=>window.location.href =`page_article/${item.id}`}/>
                 </div>
                 <a id="Article_Lien" href={`page_article/${item.id}`}><h3 id="Article_Nom">{item.Nom}</h3></a>
                 <p id="Article_Prix_Unitaire">{item.price}€ / Unité</p>
@@ -58,6 +58,7 @@ function Cart() {
                   </button>
 
                 </div>
+                <hr id="Separateur" />
                 <p id="Article_Prix_Total">Sous-Total : {item.itemTotal}€</p>
               </div>
               <hr id="Separateur" />
@@ -67,12 +68,13 @@ function Cart() {
           ))}
         </div>
         <div id="Option_Panier">
+          <div id="Prix_Panier">
+            <p id="Total"> TOTAL :</p> <p id="Euro">{cartTotal} € </p>
+          </div>
 
-          <h1 id="Resumé_panier">TOTAL : {cartTotal} € - {totalItems} articles </h1>
-          <button className="btn btn-danger"
-                onClick={() => emptyCart()}>Vider le panier
-          </button>
-          <a href="/commande"><h3>Passer ma commande</h3></a>
+          <button className="Btn_Panier vert" onClick={()=>window.location.href = "commande"}><p className="antiqueWhite">Valider Commande</p></button>
+          <br/>
+          <button className="Btn_Panier rouge" onClick={() => emptyCart()}><p className="antiqueWhite"><img id="Article_Trash_Img" src={"/Images/logo_poubelle.png"} /> Vider panier <img id="Article_Trash_Img" src={"/Images/logo_poubelle.png"} /></p></button>
         </div>
       </div>
       </>

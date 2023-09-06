@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useCart } from "react-use-cart";
-import { AdresseContext, PaymentContext, StepContext, UserContext } from "../Commander";
+import { AdresseContext, ChoixlivraisonContext, PaymentContext, StepContext, UserContext } from "../Commander";
 
 function Recapitulatif() {
 
@@ -8,14 +8,44 @@ function Recapitulatif() {
     const { etape, setetape } = useContext(StepContext);
     const [utilisateur, setutilisateur] = useContext(UserContext);
     const [choixadresse, setchoixadresse] = useContext(AdresseContext);
-    const [choixlivraison, setchoixlivraison] = useState("")
-    const [coutlivraison, setcoutlivraison] = useState(0)
+    // const [choixlivraison, setchoixlivraison] = useState("")
+    // const [coutlivraison, setcoutlivraison] = useState(0)
+    const [choixlivraison, setchoixlivraison,coutlivraison, setcoutlivraison ] = useContext(ChoixlivraisonContext);
+
+    
+
 
     const {
         items,
         cartTotal,
+        emptyCart,
     } = useCart();
 
+    const majstatuspanier = () => {
+        // Changer le status de la/les commandes marqué comme "Panier"
+
+        //console.log (utilisateur.commandes)
+
+        const commandes = utilisateur.commandes
+        .filter((commande) => commande.Status == "Panier")
+        .map((commande) => ({"id":commande.id,"id_utilisateur":commande.id_utilisateur,"date":commande.date,"Status": "Non Repris" }));
+
+        console.log (JSON.stringify (commandes));
+
+        fetch('http://localhost:52550/api/commande/putlist',
+
+        {
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(commandes)
+        })
+
+
+        }
+    
 
     function HandleSubmit(event) {
         event.preventDefault();
@@ -32,8 +62,6 @@ function Recapitulatif() {
             "Status": "Commandé"
         }
 
-        console.log (JSON.stringify(commande))
-
         const test = fetch('http://localhost:52550/api/commande/post',
 
             {
@@ -45,103 +73,43 @@ function Recapitulatif() {
                 body: JSON.stringify(commande)
             })
 
-        setetape(4)
-        
+        emptyCart();
+        majstatuspanier();
 
-
-
-
-
-    }
-
-    function formSubmit(event) {
-
-        event.preventDefault();
-        setcoutlivraison(choixlivraison == "Livraison économique" ? 10 : choixlivraison == "Livraison prioritaire" ? 20 : 5)
-
+        setetape(5)
     }
 
     return (
-
-        <>
-            Expédition à l'Adresse {choixadresse.Nom_Adresse} :
-
-            <ul>
-                <li >{choixadresse.Rue}</li>
-                <li>{choixadresse.Complement}</li>
-                <li>{choixadresse.Ville}</li>
-                <li>{choixadresse.Departement}</li>
-                <li>{choixadresse.Pays}</li>
-
-            </ul>
-
-            Choix de la livraison :
-
-            <form onSubmit={formSubmit}>
-                <div className="radio">
-                    <label>
-                        <input
-                            type="radio"
-                            value="Livraison économique"
-                            onChange={(e) => setchoixlivraison(e.target.value)}
-                            name="livraison"
-                            required
-                        />
-                        Livraison économique
-                    </label>
-                </div>
-                <div className="radio">
-                    <label>
-                        <input
-                            type="radio"
-                            value="Livraison prioritaire"
-                            onChange={(e) => setchoixlivraison(e.target.value)}
-                            name="livraison"
-                        />
-                        Livraison prioritaire
-                    </label>
-                </div>
-                <div className="radio">
-                    <label>
-                        <input
-                            type="radio"
-                            value="Relais colis"
-                            onChange={(e) => setchoixlivraison(e.target.value)}
-                            name="livraison"
-                        />
-                        Relais colis
-                    </label>
-                </div>
-
-                <button className="btn btn-default" type="submit">
-                    Submit
-                </button>
-            </form>
-
-            {coutlivraison && choixlivraison &&
+    <>
+            {
                 <>
-                    Votre commande :
-
-                    <ul>
+                    <h6 className="Fond"> Votre commande : </h6>
+                    <table className="green Table_Recap" style={{"textAlign":"center"}}>
+                        <thead>
+                            <tr><th style={{"width":"100px"}}>Quantité</th><th style={{"width":"250px"}}>Plantes</th><th style={{"width":"100px"}}>P.U.</th><th style={{"width":"100px"}}>Sous Total</th></tr>
+                        </thead>
+                        <tbody>
                         {items.map((item) => (
-                            <li key={item.id}>
-                                {item.quantity} x {item.Nom} = {item.quantity * item.price} €
-
-                            </li>
+                            <tr><td>{item.quantity}</td> <td> {item.Nom} </td><td style={{"fontStyle":"italic"}}>{item.price} €</td><td style={{"fontWeight":"bold"}}>{item.quantity * item.price} €</td></tr>
                         ))}
-                    </ul>
-
-                    total hors taxe : {(cartTotal * .80).toFixed(2)} € <br />
-                    total TTC : {cartTotal} € <br />
-                    frais de livraison : {choixlivraison} : {coutlivraison}€ <br />
-                    A payer: {cartTotal + coutlivraison}<br />
-
-
-                    Choix du paiement : {paiement} <br />
-
-                    <button onClick={HandleSubmit}>Confirmer</button>
-
+                        </tbody>
+                    </table>
+                    
+                    <p style={{"textAlign":"left", "width": "275px", "margin": "auto"}}>
+                        <hr/>
+                        Total hors taxe : {(cartTotal * .80).toFixed(2)} € <br />
+                        Total TTC : {cartTotal} € <br />
+                        <hr/>
+                        Frais de livraison : {choixlivraison} : {coutlivraison} € <br />
+                        <hr />
+                        A payer: {cartTotal + coutlivraison} €<br />
+                        Choix du paiement : {paiement} <br />
+                        <hr />
+                    </p>
+                    <button  id="btn_submit" onClick={HandleSubmit}>Confirmer</button>
                 </>
+                ||
+                <></>
             }
 
         </>

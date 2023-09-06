@@ -92,7 +92,7 @@ function Validation (){
   return (
     <>
     <h3 className="Fond green">Votre commande à été validée!</h3>
-    <button className="m-2" id="btn_submit"> Retour à l'accueil</button>
+    <button className="m-2" id="btn_submit" onClick={()=>window.location.href=("/")}> Retour à l'accueil</button>
     </>
   )
 }

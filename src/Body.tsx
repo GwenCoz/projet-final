@@ -18,7 +18,7 @@ function Body(){
             <div style={{position: "relative", overflow: "hidden", borderRadius:"10px"}}>
                 <img style={{objectFit: "cover", width: "100%",height: "400px"}} src="/Images/Plantes/Lilas.jpg"/>
             </div>
-            <p style={{padding:" 5px 3px",borderRadius:"10px",backgroundColor:"#ffffffd0" ,position:"absolute",bottom:"60px",width:"90%",fontSize:"1.02em"}}> Découvrez notre selection de <strong> plantes extérieures</strong> pour embellir votre jardin et en faire un cadre agréable pour profiter de l'été. </p>
+            <p style={{padding:" 5px 3px",borderRadius:"10px",backgroundColor:"#ffffffd0" ,position:"absolute",bottom:"60px",width:"90%",fontSize:"1.02em"}}> Découvrez notre selection de <strong> plantes extérieures</strong> pour embellir votre jardin et profiter de l'été. </p>
             <button id="btn_submit" style={{position:"absolute",bottom:"20px"}}> Plantes d'extérieur</button> 
         </div>
         </div>   

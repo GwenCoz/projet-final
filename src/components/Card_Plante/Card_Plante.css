@@ -4,18 +4,20 @@
 }
 
 #Card_Container{
-    width: 100%;
+    width: 90%;
     height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 10px;
+    margin: auto;
 }
 
 #Card_Fond{
 
-    height: 400px;
+    height: 300px;
     width: 24%;
+    max-width: 300px;
     background-color: rgba(250, 235, 215, 0.35);
     border: rgba(250, 235, 215, 0.5) 1px solid;
     margin: 5px;
@@ -35,14 +37,14 @@
 #Card_Image{
     object-fit: cover;
     width: 100%;
-    height: 350px;
+    height: 250px;
 
 }
 #Card_Name{
     
     color: darkgreen;
     position: absolute;
-    top: 365px;
+    top: 265px;
     font-weight: 600;
     font-size: 18px;
     margin: 0 2.5% 2.5%;
